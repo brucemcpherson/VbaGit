@@ -1,10 +1,41 @@
 Option Explicit
 ' this is based on the ideas from http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready
 ' and is about getting your excel code to github
-' VbaGit v0.0
+' VbaGit v0.1
 
 ' settings are in public var
 Dim VGSettings As cJobject
+Public Sub doEverything()
+
+    ' these are the projects in this workbook i want to separate
+
+
+    '    ' base classes
+'    doExtraction "cJobject", "cJobject"
+'    doExtraction "cDataSet", "cDataSet"
+'
+'    ' utilities
+'    doExtraction "excelClassSerializer", "classSerializer"
+'
+'    ' example projects
+'    doExtraction "excelRestLibraryExamples", "restLibraryExamples"
+'    doExtraction "excelRoadmapper", "doRoadmapper"
+'    doExtraction "excelGoogleSheets", "googleSheets,googleWireExample"
+'    doExtraction "excelColor", "heatmapExamples,colorizing"
+'    doExtraction "excelD3", "D3"
+'    doExtraction "excelOauth2", "oAuthExamples"
+'    doExtraction "excelParseCom", "parseCom"
+'    doExtraction "excelProgressPar", "TestProgressBar"
+
+    doExtraction "VbaGit", "VbaGit"
+    ' now write them to git
+    doGit
+    
+End Sub
+Public Sub doTheImport()
+    ' this is the something I want to import into the companion workbook
+    'doImportFromGit "cJobject"
+End Sub
 
 ' NOTES ON IMPORTING CODE FROM GITHUB
 '
@@ -121,27 +152,7 @@ Public Function getVGSettings(Optional force As Boolean)
 End Function
 
 
-Public Sub doEverything()
 
-    ' these are the projects in this workbook i want to separate
-
-    'doExtraction "cJobject", "cJobject"
-    'doExtraction "gistThat", "gistThat"
-    'doExtraction "cDataSet", "cDataSet"
-    'doExtraction "usefulStuff", "usefulStuff"
-    'doExtraction "usefulColorStuff", "usefulColorStuff"
-    'doExtraction "urlResult", "urlResult"
-    'doExtraction "restLibrary", "restLibrary"
-    'doExtraction "oauthExamples", "oauthExamples"
-    'doExtraction "usefulSheetStuff", "usefulSheetStuff"
-    doExtraction "VbaGit", "VbaGit"
-    ' now write them to git
-    doGit "VbaGit"
-    
-End Sub
-Public Sub doTheImport()
-    doImportFromGit "VbaGit"
-End Sub
 Public Sub doImportFromGit(repoName As String, _
     Optional projectName As String = vbNullString, _
     Optional applyExcelReferences As Boolean = False)
@@ -1160,13 +1171,16 @@ Private Function makeReadMe(info As cJobject) As String
     
     c.add("# VBA Project: ").addLine (info.toString("title"))
     c.add("This repo (").add(info.toString("repo")).add(") was automatically created on ").add(CStr(Now())).add (" by VBAGit.")
-    c.addLine ("For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready ""desktop liberation"")")
+    c.addLine ("For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/vbagit ""desktop liberation"")")
     c.add ("you can see [library and dependency information here](")
     c.add(getVGSettings().toString("FILES.DEPENDENCIES")).addLine(")").addLine ("")
+    c.add ("To get started with VBA Git, you can either create a workbook with the code here in it, or use this premade [VbaBootStrap workbook](http://ramblings.mcpher.com/Home/excelquirks/downlable-items/VbaGitBootStrap.xlsm ""VbaBootStrap"")")
+    c.add (mdWrap)
     c.add ("Now update manually with details of this project - this skeleton file is committed only when there is no README.md in the repo.")
 
     makeReadMe = c.toString
   
+ 
 End Function
 
 Private Function makeDependency(project As cJobject, info As cJobject) As String
