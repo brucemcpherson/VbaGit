@@ -503,15 +503,14 @@ Public Function stringify(Optional blf As Boolean) As String
 End Function
 Public Function serialize(Optional blf As Boolean = False) As String
 ' make a JSON string of this structure
-  Dim t As cStringChunker, s As String
+  Dim t As cStringChunker
   
   Set t = New cStringChunker
-
+  If Not fake Then t.add "{"
   recurseSerialize Me, t, blf
-
-  serialize = t.toString
-  
-    
+  If Not fake Then t.add "}"
+ 
+  serialize = t.content
 End Function
 Public Property Get needsIndent() As Boolean
     needsIndent = needsCurly Or needsSquare
@@ -1245,6 +1244,9 @@ Public Sub tearDown()
     Set pBacktrack = Nothing
     Set pChildren = Nothing
 End Sub
+
+
+
 
 
 
