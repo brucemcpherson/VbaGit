@@ -2,10 +2,32 @@
 ## VBA Module: **[VbaGit](/scripts/VbaGit.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (VbaGit) was automatically created on 23/03/2015 10:33:27 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 24/03/2015 10:59:10 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in VbaGit
+
+---
+VBA Procedure: **doEverything**  
+Type: **Sub**  
+Returns: **void**  
+Scope: **Public**  
+
+*Public Sub doEverything()*  
+
+**no arguments required for this procedure**
+
+
+---
+VBA Procedure: **doTheImport**  
+Type: **Sub**  
+Returns: **void**  
+Scope: **Public**  
+
+*Public Sub doTheImport()*  
+
+**no arguments required for this procedure**
+
 
 ---
 VBA Procedure: **deleteThisAfterRunningOnce**  
@@ -29,28 +51,6 @@ Scope: **Public**
 *name*|*type*|*optional*|*default*
 ---|---|---|---
 force|Boolean|True|
-
-
----
-VBA Procedure: **doEverything**  
-Type: **Sub**  
-Returns: **void**  
-Scope: **Public**  
-
-*Public Sub doEverything()*  
-
-**no arguments required for this procedure**
-
-
----
-VBA Procedure: **doTheImport**  
-Type: **Sub**  
-Returns: **void**  
-Scope: **Public**  
-
-*Public Sub doTheImport()*  
-
-**no arguments required for this procedure**
 
 
 ---
