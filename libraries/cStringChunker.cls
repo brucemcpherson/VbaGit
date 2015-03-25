@@ -158,8 +158,20 @@ Public Function chop(Optional n As Long = 1) As cStringChunker
     pSize = maxNumber(0, pSize - n)
     Set chop = Me
 End Function
+Public Function chopSuperTrim() As cStringChunker
+    
+    Dim s As String
+    s = " " & vbCr & vbLf & vbTab
+    
+    Do While (pSize > 0)
+        If (InStr(1, s, getRight(1)) = 0) Then Exit Do
+        chop
+    Loop
+    
+    Set chopSuperTrim = Me
+End Function
 Public Function chopIf(t As String) As cStringChunker
-    ' chop if its t
+    ' chop if its any of t
     Dim k As Long
     k = Len(t)
     If k <= pSize Then
