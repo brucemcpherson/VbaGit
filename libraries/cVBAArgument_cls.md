@@ -2,7 +2,7 @@
 ## VBA Module: **[cVBAArgument](/libraries/cVBAArgument.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 25/03/2015 17:35:21 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 25/03/2015 18:59:47 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cVBAArgument
