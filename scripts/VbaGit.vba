@@ -14,8 +14,8 @@ Public Sub doEverything()
 
 
     '    ' base classes
-'    doExtraction "cJobject", "cJobject"
-'    doExtraction "cDataSet", "cDataSet"
+    doExtraction "cJobject", "cJobject"
+    
 '
 '    ' utilities
 '    doExtraction "excelClassSerializer", "classSerializer"
@@ -32,7 +32,7 @@ Public Sub doEverything()
 
     doExtraction "VbaGit", "VbaGit"
     ' now write them to git
-    doGit "VbaGit"
+    doGit
     
 End Sub
 '/**
