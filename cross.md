@@ -1,5 +1,5 @@
 # VBA Project: VbaGit
-This cross reference list for repo (VbaGit) was automatically created on 24/03/2015 10:59:11 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
+This cross reference list for repo (VbaGit) was automatically created on 25/03/2015 17:35:21 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 You can see [library and dependency information here](dependencies.md)
 
 ###Below is a cross reference showing which modules and procedures reference which others
@@ -7,36 +7,16 @@ You can see [library and dependency information here](dependencies.md)
 ---|---|---|---
 cJobject||VbaGit|deleteThisAfterRunningOnce
 cJobject||VbaGit|getVGSettings
-cJobject||VbaGit|doImportFromGit
 cJobject||VbaGit|getCodeFromGit
-cJobject||VbaGit|replaceModule
-cJobject||VbaGit|getRepo
-cJobject||VbaGit|doGit
-cJobject||VbaGit|getAllTheRepos
-cJobject||VbaGit|createRepos
 cJobject||VbaGit|writeTheSource
-cJobject||VbaGit|writeTheFiles
 cJobject||VbaGit|getAllInfoFiles
 cJobject||VbaGit|writeInfoFile
-cJobject||VbaGit|writeToStagingArea
 cJobject||VbaGit|getDependencyList
 cJobject||VbaGit|dependencyResolve
 cJobject||VbaGit|makeCrossReferenceJob
-cJobject||VbaGit|registerExcelReferences
-cJobject||VbaGit|registerExcelReference
-cJobject||VbaGit|makeExcelReferences
-cJobject||VbaGit|getVbaAsJobject
-cJobject||VbaGit|blowProcedures
-cJobject||VbaGit|blowArguments
 cJobject||VbaGit|getProjects
-cJobject||VbaGit|getProcList
-cJobject||VbaGit|getmoduleList
 cJobject||VbaGit|makeInfoFile
 cJobject||VbaGit|modulesToInfo
-cJobject||VbaGit|makeCross
-cJobject||VbaGit|makeReadMe
-cJobject||VbaGit|makeDependency
-cJobject||VbaGit|makeArguments
 cJobject||VbaGit|findModLink
 cregXLib||regXLib|rxMakeRxLib
 cStringChunker||VbaGit|dependencyResolve
@@ -48,23 +28,14 @@ cStringChunker||VbaGit|makeArguments
 cStringChunker||VbaGit|findModLink
 cStringChunker||VbaGit|getDependencyList
 cVBAArgument||cVBAProcedure|dealWithArguments
-cVbaGit||VbaGit|getRepo
 cVbaGit||VbaGit|doGit
-cVbaGit||VbaGit|getAllTheRepos
-cVbaGit||VbaGit|createRepos
 cVbaGit||VbaGit|writeTheSource
-cVbaGit||VbaGit|writeTheFiles
 cVbaGit||VbaGit|doImportFromGit
 cVbaGit||VbaGit|getCodeFromGit
-cVBAmodule||VbaGit|makeArguments
 cVBAmodule||VbaGit|isModuleObj
 cVBAmodule||VbaGit|getmoduleList
-cVBAProcedure||VbaGit|findProc
-cVBAProcedure||VbaGit|blowArguments
 cVBAProcedure||VbaGit|getProcList
-cVBAProcedure||VbaGit|getDependencyList
 cVBAProject||VbaGit|getProjects
-cVBAProject||VbaGit|makeExcelReferences
 regXLib|rxReplace|usefulcJobject|cleanGoogleWire
 urlResult|urlGet|cVbaGit|getUnpaged
 urlResult|urlGet|cVbaGit|getMyRepos
@@ -73,18 +44,19 @@ urlResult|urlGet|cVbaGit|getFileByPath
 urlResult|urlPost|cVbaGit|getTokenFromBasic
 urlResult|urlPost|cVbaGit|createRepo
 urlResult|urlPost|cVbaGit|commitFile
-usefulcJobject|JSONParse|VbaGit|getAllInfoFiles
 usefulcJobject|JSONParse|VbaGit|doImportFromGit
+usefulcJobject|JSONParse|VbaGit|getAllInfoFiles
 usefulRegex|getRx|VbaGit|dependencyResolve
 usefulSheetStuff|min|usefulcJobject|cleanGoogleWire
-usefulStuff|Base64Encode|VbaGit|setGitBasicCredentials
 usefulStuff|Base64Encode|VbaGit|setGitClientCredentials
+usefulStuff|Base64Encode|VbaGit|setGitBasicCredentials
 usefulStuff|checkOrCreateFolder|VbaGit|writeInfoFile
 usefulStuff|conditionalAssignment|VbaGit|modulesToInfo
 usefulStuff|getAllSubFolderPaths|VbaGit|getAllInfoFiles
 usefulStuff|getTimestampFromDate|VbaGit|makeInfoFile
-usefulStuff|isSomething|VbaGit|getDependencyList
+usefulStuff|isinCollection|VbaGit|dependencyResolve
 usefulStuff|isSomething|VbaGit|makeCrossReferenceJob
+usefulStuff|isSomething|VbaGit|getDependencyList
 usefulStuff|isUndefined|VbaGit|deleteThisAfterRunningOnce
 usefulStuff|isUndefined|VbaGit|getVGSettings
 usefulStuff|readFromFolderFile|VbaGit|writeTheFiles
