@@ -2,7 +2,7 @@
 ## VBA Module: **[cVBAmodule](/libraries/cVBAmodule.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 24/03/2015 10:59:10 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 25/03/2015 17:35:21 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cVBAmodule
@@ -12,6 +12,7 @@ VBA Procedure: **name**
 Type: **Get**  
 Returns: **String**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get name() As String*  
 
@@ -23,6 +24,7 @@ VBA Procedure: **parent**
 Type: **Get**  
 Returns: **[cVBAProject](/libraries/cVBAProject_cls.md "cVBAProject")**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get parent() As cVBAProject*  
 
@@ -34,6 +36,7 @@ VBA Procedure: **vCom**
 Type: **Get**  
 Returns: **VBComponent**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get vCom() As VBComponent*  
 
@@ -45,6 +48,7 @@ VBA Procedure: **procedures**
 Type: **Get**  
 Returns: **Collection**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get procedures() As Collection*  
 
@@ -56,13 +60,14 @@ VBA Procedure: **init**
 Type: **Sub**  
 Returns: **void**  
 Scope: **Public**  
+Description: ****  
 
 *Public Sub init(v As VBComponent, pj As cVBAProject)*  
 
-*name*|*type*|*optional*|*default*
----|---|---|---
-v|VBComponent|False|
-pj|[cVBAProject](/libraries/cVBAProject_cls.md "cVBAProject")|False|
+*name*|*type*|*optional*|*default*|*description*
+---|---|---|---|---
+v|VBComponent|False||
+pj|[cVBAProject](/libraries/cVBAProject_cls.md "cVBAProject")|False||
 
 
 ---
@@ -70,6 +75,7 @@ VBA Procedure: **tearDown**
 Type: **Sub**  
 Returns: **void**  
 Scope: **Public**  
+Description: ****  
 
 *Public Sub tearDown()*  
 
@@ -81,6 +87,7 @@ VBA Procedure: **textKind**
 Type: **Get**  
 Returns: **String**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get textKind() As String*  
 
@@ -92,6 +99,7 @@ VBA Procedure: **Class_Initialize**
 Type: **Sub**  
 Returns: **void**  
 Scope: **Private**  
+Description: ****  
 
 *Private Sub Class_Initialize()*  
 
