@@ -98,8 +98,7 @@ Else
     UTF16To8 = ""
 End If
 End Function
-
-
+'end of utf16to8
 
 
 Public Function URLEncode( _
@@ -244,8 +243,12 @@ End Function
 Public Function diminishingReturn(val As Double, Optional s As Double = 10) As Double
     diminishingReturn = Sgn(val) * s * (Sqr(2 * (Sgn(val) * val / s) + 1) - 1)
 End Function
-
-
+Public Function superTrim(s As String) As String
+    Dim c As cStringChunker
+    Set c = New cStringChunker
+    superTrim = c.add(s).chopSuperTrim.toString
+    
+End Function
 Public Function makeKey(v As Variant) As String
     makeKey = LCase(Trim(CStr(v)))
 End Function
