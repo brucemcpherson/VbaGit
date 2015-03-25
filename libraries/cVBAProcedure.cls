@@ -5,9 +5,17 @@ Private pParent As cVBAmodule
 Private pName As String
 Private pProcKind As vbext_prockind
 Private pArguments As Collection
+Private pIndex As Long
+Private pDescription As String
 Private Sub Class_Initialize()
     Set pArguments = New Collection
 End Sub
+Public Property Let description(p As String)
+    pDescription = p
+End Property
+Public Property Get description() As String
+    description = pDescription
+End Property
 Public Property Get name() As String
     name = pName
 End Property
@@ -24,7 +32,9 @@ Public Function init(m As cVBAmodule, pn As String, pk As vbext_prockind) As cVB
     Set pParent = m
     pProcKind = pk
     pName = pn
-    pParent.procedures.add Me, name & "-" & procTextKind
+    pParent.procedures.add Me, makeKey(name & "-" & procTextKind)
+    pIndex = pParent.procedures.Count
+    pDescription = superTrim(getDescription)
     dealWithArguments declaration
     Set init = Me
 End Function
@@ -47,9 +57,27 @@ End Property
 Public Function removeComments(s As String) As String
     removeComments = getRidOfComments(s)
 End Function
+'/**
+' * interprets jsdoc like procedure description
+' * @return {string} the procedure description
+'*/
+Public Function getDescription() As String
+    Dim matches As MatchCollection
+    Set matches = getRx("\/\*{2}\s*[\n\r][\s'*]*(.*)").Execute(getTheCodePlusLeadingComments)
+
+    getDescription = ""
+    If (matches.Count > 0) Then
+        getDescription = superTrim(matches(0).SubMatches(0))
+    End If
+End Function
 Private Function dealWithArguments(dec As String) As cVBAProcedure
-    Dim rx As String, s As String, a As Variant, i As Long, p As cVBAArgument
-    ''rx = "(?:\w+\s*\()(.*)\)"
+    Dim rx As String, s As String, a As Variant, i As Long, _
+        p As cVBAArgument, j As Long, k As Long
+    
+    Dim matches As MatchCollection, m As match
+    ' get any jdocs description of the arguments
+    Set matches = getRx("@param (?:{\w*})\s*(\w*)\s*(.*)$").Execute(getTheCodePlusLeadingComments)
+    
     rx = "\((.*)\)"
     s = Trim(rxString(rx, dec))
     
@@ -60,7 +88,19 @@ Private Function dealWithArguments(dec As String) As cVBAProcedure
         Set p = New cVBAArgument
         p.init Me, CStr(a(i))
         arguments.add p, LCase(a(i))
-        
+        ' now find any doc matches
+        If matches.Count > 0 Then
+            For j = 0 To matches.Count - 1
+                ' these 2 should match the arg name and its description
+                If matches(j).SubMatches.Count = 2 Then
+                    If (compareAsKey(matches(j).SubMatches(0), p.name)) Then
+                        p.description = superTrim(matches(j).SubMatches(1))
+                    End If
+                Else
+                    Debug.Print matches(j) & " had no description"
+                End If
+            Next j
+        End If
     Next i
     Set dealWithArguments = Me
 End Function
@@ -127,10 +167,54 @@ Public Property Get procReturns() As String
         
     End Select
 End Property
-Public Property Get getTheCode() As String
+Public Function getTheCode() As String
     ' returns the entire code for this procedure
-    getTheCode = codeModule.Lines(startLine, lineCount)
-End Property
+    getTheCode = codeModule.Lines(startLine, _
+        getFinishWithoutTrailingComments - startLine + 1)
+End Function
+Public Function getFinishWithoutTrailingComments() As Long
+    ' the comments are attached to the end of the function, when they should belong to next
+    Dim rx As RegExp, finish As Long
+    Set rx = getTheEndRx
+    finish = startLine + lineCount - 1
+
+    While finish > startLine + 1 And Not rx.Test(codeModule.Lines(finish, 1))
+        finish = finish - 1
+    Wend
+    
+    getFinishWithoutTrailingComments = finish
+    
+End Function
+Public Function getTheEndRx() As RegExp
+    Set getTheEndRx = getRx("\bend\s*function|sub|property")
+End Function
+Public Function getTheCodePlusLeadingComments() As String
+    ' returns the entire code for this procedure
+    Dim start As Long, prev As cVBAProcedure, rx As RegExp, _
+        lengthOfCode As Long, lengthOfLeadingComments As Long
+    
+    Set rx = getTheEndRx()
+    
+    ' if this is not the first procedure, the comments for it start at the end of the previous
+    If (pIndex > 1) Then
+        Set prev = pParent.procedures(pIndex - 1)
+        ' we want the comments too (which get attached to the previous function)
+        start = startLine
+        While start > prev.startLine + 2 And Not rx.Test(codeModule.Lines(start - 1, 1))
+            start = start - 1
+        Wend
+       
+    Else
+        start = codeModule.CountOfDeclarationLines + 1
+
+    End If
+    
+    lengthOfCode = 1 + getFinishWithoutTrailingComments - startLine
+    lengthOfLeadingComments = startLine - start
+  
+    getTheCodePlusLeadingComments = codeModule.Lines(start, _
+       lengthOfLeadingComments + lengthOfCode)
+End Function
 Public Property Get declaration() As String
     ' return the declaration line, stripped of comments and consolidated onto one line
     Dim n As Long, s As String, t As String, doMore As Boolean
@@ -139,6 +223,7 @@ Public Property Get declaration() As String
     t = vbNullString
     Do
         s = LTrim(RTrim(removeComments(codeModule.Lines(n + startLine, 1))))
+
         If (s <> vbNullString) Then
             doMore = Right(s, 1) = "_" And n < lineCount
             If (doMore) Then s = Left(s, Len(s) - 1)
