@@ -767,17 +767,42 @@ End Sub
 Private Function quote(s As String) As String
     quote = q & s & q
 End Function
-Public Function parse(s As String, Optional jtype As eDeserializeType, Optional complain As Boolean = True) As cJobject
+'/**
+' *this will take a JSON string and parse it into a cJobject branch under ME
+' *it behaves as the JavaScript JSON.parse except it allows for single quoted props & values too
+' *@param {string} s the string to be parsed
+' *@param {edeserializetype} jtype type of serialization
+' *@param {boolean} complain whether to complain in the event of an error
+' *@param {boolean} dealWithLikelyTimestamps whether to convert things that look like JS or unix timestamps to excel dates
+' *@return {cJobject} the branch header
+'*/
+Public Function parse(s As String, _
+    Optional jtype As eDeserializeType, _
+    Optional complain As Boolean = True, _
+    Optional dealWithLikelyTimestamps As Boolean = True) As cJobject
+    
     Dim j As cJobject
-    Set j = deSerialize(s, jtype, complain)
+    Set j = deSerialize(s, jtype, complain, dealWithLikelyTimestamps)
     If j.key = croot Then
         ' drop fake header
         j.sever
     End If
     Set parse = j
 End Function
-Public Function deSerialize(s As String, Optional jtype As eDeserializeType = eDeserializeNormal, Optional complain As Boolean = True) As cJobject
-    ' this will take a simple JSON string and deserialize into a cJobject branch starting at ME
+'/**
+' *this will take a JSON string and deserialize into a cJobject branch under ME
+' *@param {string} s the string to be parsed
+' *@param {edeserializetype} jtype type of serialization
+' *@param {boolean} complain whether to complain in the event of an error
+' *@param {boolean} dealWithLikelyTimestamps whether to convert things that look like JS or unix timestamps to excel dates
+' *@return {cJobject} the branch header
+'*/
+Public Function deSerialize(s As String, _
+    Optional jtype As eDeserializeType = eDeserializeNormal, _
+    Optional complain As Boolean = True, _
+    Optional dealWithLikelyTimestamps As Boolean = True) As cJobject
+    
+    ' this will take a JSON string and deserialize into a cJobject branch starting at ME
     ' prepare string for processing
     Dim jo As cJobject
 
@@ -786,7 +811,7 @@ Public Function deSerialize(s As String, Optional jtype As eDeserializeType = eD
     Set jo = New cJobject
     jo.init Nothing, croot
     pJtype = jtype
-    Set jo = dsLoop(jo, complain)
+    Set jo = dsLoop(jo, complain, dealWithLikelyTimestamps)
     ' already has its own root
     If jtype = eDeserializeGoogleWire Then
         Set jo = jo.children(1)
@@ -827,13 +852,15 @@ Private Function nullItem(job As cJobject) As cJobject
 
 End Function
 
-Private Function dsLoop(job As cJobject, Optional complain As Boolean = True) As cJobject
+Private Function dsLoop(job As cJobject, complain As Boolean, _
+        dealWithLikelyTimestamps As Boolean) As cJobject
+    
     Dim cj As cJobject, jo As cJobject, ws As String
     Set jo = job
     pActive = True
     pWhatNext = "{["
     While pPointer <= Len(pJstring) And pActive
-        Set jo = dsProcess(jo, complain)
+        Set jo = dsProcess(jo, complain, dealWithLikelyTimestamps)
     Wend
     Set dsLoop = job
 End Function
@@ -876,7 +903,9 @@ Private Function doNextToken() As String
         pPointer = pPointer + Len(nextToken)
     End If
 End Function
-Private Function dsProcess(job As cJobject, Optional complain As Boolean = True) As cJobject
+Private Function dsProcess(job As cJobject, complain As Boolean, _
+        dealWithLikelyTimestamps As Boolean) As cJobject
+        
     Dim k As Long, jo As cJobject, s As String, what As String, jd As cJobject, v As Variant
     Dim nextToken As String, nt As String, a As Variant, av As String, jt As cJobject
     'are we done?
@@ -925,7 +954,7 @@ Private Function dsProcess(job As cJobject, Optional complain As Boolean = True)
             
      ' could be a key or an array value
         Case q, qs, "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", "."
-            v = getvItem(, nextToken)
+            v = getvItem(dealWithLikelyTimestamps, , nextToken)
             If IsEmpty(v) Then
                 badJSON pWhatNext, , complain
             Else
@@ -952,7 +981,7 @@ Private Function dsProcess(job As cJobject, Optional complain As Boolean = True)
         Case ":"
             pPointer = pPointer + 1
             nt = peekNextToken
-            v = getvItem(, doNextToken)
+            v = getvItem(dealWithLikelyTimestamps, , doNextToken)
 
             If IsEmpty(v) And nt <> "null" Then
                 ' about to start an array rather than get a value
@@ -1005,7 +1034,10 @@ Private Function nOk() As String
     ' some character to say that a numeric is ok
     nOk = Chr(254)
 End Function
-Private Function getvItem(Optional whichQ As String = "", Optional nextToken = vbNullString) As Variant
+Private Function getvItem(dealWithLikelyTimestamps As Boolean, _
+    Optional whichQ As String = "", _
+    Optional nextToken As String = vbNullString) As Variant
+    
     Dim s As String
     ' is it a string?
     getvItem = Empty
@@ -1021,7 +1053,7 @@ Private Function getvItem(Optional whichQ As String = "", Optional nextToken = v
             Else
     ' maybe its a number
                 s = getNumericItem
-                If Len(s) > 0 Then getvItem = toNumber(s)
+                If Len(s) > 0 Then getvItem = toNumber(s, dealWithLikelyTimestamps)
             End If
     End Select
     
@@ -1044,7 +1076,7 @@ Private Function peekBehind() As String
         peekBehind = pointedAt(k)
     End If
 End Function
-Private Function toNumber(sIn As String) As Variant
+Private Function toNumber(sIn As String, dealWithLikelyTimestamps As Boolean) As Variant
     ' convert string to numeric , either double or long
     Dim ts As String, s As String, x As Date
  ' find out the '.' separator for this locale
@@ -1064,15 +1096,18 @@ Private Function toNumber(sIn As String) As Variant
 overflow:
     'perhaps this is a javascript date
     On Error GoTo overflowAgain
-    If (Len(s) = 13) Then
+    If (Len(s) = 13 And dealWithLikelyTimestamps And Not InStr(1, s, ts)) Then
         x = DateAdd("s", CDbl(Left(s, 10)), DateSerial(1970, 1, 1))
+    Else
+        ' we're not going to convert to date, so try to overflow to a double
+        x = CDbl(s)
     End If
     toNumber = x
     Resume Next
     Exit Function
     
 overflowAgain:
-    'this wasnt a javascript date
+    'this wasnt a javascript date or a convertable number
     toNumber = 0
     Resume Next
     Exit Function
