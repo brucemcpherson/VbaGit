@@ -1,5 +1,5 @@
 # VBA Project: VbaGit
-This cross reference list for repo (VbaGit) was automatically created on 25/03/2015 17:35:21 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
+This cross reference list for repo (VbaGit) was automatically created on 25/03/2015 18:59:47 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 You can see [library and dependency information here](dependencies.md)
 
 ###Below is a cross reference showing which modules and procedures reference which others
