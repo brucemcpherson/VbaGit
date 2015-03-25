@@ -2,7 +2,7 @@
 ## VBA Module: **[cVBAProject](/libraries/cVBAProject.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 24/03/2015 10:59:10 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 25/03/2015 17:35:21 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cVBAProject
@@ -12,6 +12,7 @@ VBA Procedure: **theProject**
 Type: **Get**  
 Returns: **VBProject**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get theProject() As VBProject*  
 
@@ -23,6 +24,7 @@ VBA Procedure: **name**
 Type: **Get**  
 Returns: **String**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get name() As String*  
 
@@ -34,6 +36,7 @@ VBA Procedure: **wBook**
 Type: **Get**  
 Returns: **Workbook**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get wBook() As Workbook*  
 
@@ -45,6 +48,7 @@ VBA Procedure: **modules**
 Type: **Get**  
 Returns: **Collection**  
 Scope: **Public**  
+Description: ****  
 
 *Public Property Get modules() As Collection*  
 
@@ -56,12 +60,13 @@ VBA Procedure: **init**
 Type: **Function**  
 Returns: **[cVBAProject](/libraries/cVBAProject_cls.md "cVBAProject")**  
 Scope: **Public**  
+Description: ****  
 
 *Public Function init(wb As Workbook) As cVBAProject*  
 
-*name*|*type*|*optional*|*default*
----|---|---|---
-wb|Workbook|False|
+*name*|*type*|*optional*|*default*|*description*
+---|---|---|---|---
+wb|Workbook|False||
 
 
 ---
@@ -69,6 +74,7 @@ VBA Procedure: **tearDown**
 Type: **Sub**  
 Returns: **void**  
 Scope: **Public**  
+Description: ****  
 
 *Public Sub tearDown()*  
 
@@ -80,6 +86,7 @@ VBA Procedure: **Class_Initialize**
 Type: **Sub**  
 Returns: **void**  
 Scope: **Private**  
+Description: ****  
 
 *Private Sub Class_Initialize()*  
 
