@@ -5,6 +5,9 @@ Option Explicit
 
 ' settings are in public var
 Dim VGSettings As cJobject
+'/**
+' * example of exporting/importing a repos from github
+' */
 Public Sub doEverything()
 
     ' these are the projects in this workbook i want to separate
@@ -29,9 +32,12 @@ Public Sub doEverything()
 
     doExtraction "VbaGit", "VbaGit"
     ' now write them to git
-    doGit
+    doGit "VbaGit"
     
 End Sub
+'/**
+' * example of importing a repo from github and replaces the code in the companion wokbook
+' */
 Public Sub doTheImport()
     ' this is the something I want to import into the companion workbook
     'doImportFromGit "cJobject"
@@ -91,12 +97,20 @@ End Sub
 '       your readme will only be committed if there is not already one in the Github repo
 '       if you prefer to use the git client instead, you can make your EXTRACT.TO location your local git repo
 
-
+'/**
+' * sets up your credentials in the windows registry.
+' * should be deleted or obfuscated after running once
+' */
 Private Function deleteThisAfterRunningOnce()
     ' substitute your git application clientid/secret
     setGitBasicCredentials "git user name", "git password"
     setGitClientCredentials "short git creds", "longer git creds"
 End Function
+'/**
+' * sets up the settings object if its not already set up and returns it
+' * @param {boolean} force whether to force a new set up
+' * @return {cJobject} the settings
+' */
 Public Function getVGSettings(Optional force As Boolean)
     
     ' get the settings - only bothers with the parse once
@@ -150,9 +164,12 @@ Public Function getVGSettings(Optional force As Boolean)
     End If
     Set getVGSettings = VGSettings
 End Function
-
-
-
+'/**
+' * do the import from github and replace the modules in the companion workbook
+' * @param {} repoName the github reponame
+' * @param {} projectName the vbaproject name
+' * @param {} applyExcelReferences whether to apply the excel references in dependency list
+' */
 Public Sub doImportFromGit(repoName As String, _
     Optional projectName As String = vbNullString, _
     Optional applyExcelReferences As Boolean = False)
@@ -216,7 +233,15 @@ Public Sub doImportFromGit(repoName As String, _
     End If
 
 End Sub
-Private Function getCodeFromGit(project As cJobject, git As cVbaGit, _
+'/**
+' * get the code from git for a particular module
+' * @param {} project the project object
+' * @param {} git a handle to the cVbaGit object
+' * @param {} folder the folder to find the file in
+' * @param {} childName the branch of the project to work from (scripts/libraries)
+' * @param {} repo the repo object containing this file
+' */
+Private Sub getCodeFromGit(project As cJobject, git As cVbaGit, _
         folder As String, info As cJobject, _
         childName As String, repo As cJobject)
     
@@ -229,7 +254,14 @@ Private Function getCodeFromGit(project As cJobject, git As cVbaGit, _
         result.tearDown
     Next job
 
-End Function
+End Sub
+'/**
+' * get the code from git for a particular module
+' * @param {} project the project object
+' * @param {} infoItem the object from info.json for this file
+' * @param {} code the new code to use
+' * @return {} whether it was successful
+' */
 Private Function replaceModule(project As cJobject, infoItem As cJobject, code As String) As Boolean
 
     Dim jm As cJobject, module As VBComponent, m As cJobject, _
@@ -270,6 +302,13 @@ Private Function replaceModule(project As cJobject, infoItem As cJobject, code A
     
     replaceModule = True
 End Function
+'/**
+' * get the code from git for a particular module
+' * @param {} git a cVbaGit handle
+' * @param {} repoName the name of the repo
+' * @param {} complain whether to complain on failure
+' * @return {} the repo object
+' */
 Private Function getRepo(git As cVbaGit, repoName As String, Optional complain As Boolean = True) As cJobject
     Dim settings As cJobject, result As cJobject
     Set settings = getVGSettings()
@@ -280,6 +319,12 @@ Private Function getRepo(git As cVbaGit, repoName As String, Optional complain A
     End If
     Set getRepo = result
 End Function
+'/**
+' * extract the files for a particular project and write them to the staging area
+' * @param {} repoName the name of the repo
+' * @param {} optListOfModules list of main modules to use as starting point
+' * @param {} projectName the name of the vba project
+' */
 Private Sub doExtraction(repoName As String, _
     Optional optListOfModules As String = vbNullString, _
     Optional projectName As String = vbNullString)
@@ -313,18 +358,48 @@ Private Sub doExtraction(repoName As String, _
     infoJob.child("extracted").setValue True
     writeInfoFile project, infoJob, makeCrossReferenceJob(dependencyList), dependencyList
 
+
     ' clean up
     projects.tearDown
     dependencyList.tearDown
     infoJob.tearDown
     settings.tearDown
-    
+    Debug.Print "done extracting "; repoName
 End Sub
-
+Private Sub testmodulestuff()
+    Dim job As cJobject, settings As cJobject, projects As cJobject, proc As cVBAProcedure
+    Dim r As Range, rx As RegExp
+    Set r = Range("sheet1!a1")
+    Set settings = getVGSettings(True)
+    Set projects = getVbaAsJobject()
+    
+    For Each job In projects.children(1).kids("modules")
+        With job.getObject("module")
+            For Each proc In .procedures
+                With proc
+                    Set r = r.Offset(1)
+                    r.Offset(, 0).value = .name
+                    r.Offset(, 1).value = .startLine
+                    r.Offset(, 2).value = .lineCount
+                    r.Offset(, 3).value = .getTheEndRx.Test( _
+                        .codeModule.Lines(.startLine, _
+                            .getFinishWithoutTrailingComments - .startLine + 1))
+                    r.Offset(, 4).value = .getTheCode
+                    r.Offset(, 5).value = .getTheCodePlusLeadingComments
+                End With
+            Next proc
+        End With
+    Next job
+    projects.tearDown
+End Sub
 ' these are all about committing to Git
 '--------------------------------------------------------
-' call this to commit all extracted projects to github
-Private Function doGit(Optional specificRepoName As String = vbNullString)
+'
+'/**
+' * call this to commit all extracted projects to github them from the staging area
+' * @param {} specificRepoName the name of the repo - if blank it will do them all
+' */
+Private Sub doGit(Optional specificRepoName As String = vbNullString)
 
     Dim allInfoFiles As cJobject, settings As cJobject, git As cVbaGit, _
         repos As cJobject, result As cJobject
@@ -349,7 +424,12 @@ Private Function doGit(Optional specificRepoName As String = vbNullString)
     repos.tearDown
     git.tearDown
     
-End Function
+End Sub
+'/**
+' * get all known repos belonging to the git logged in individual
+' * @param {} git a handle to the cVbaGit api
+' * @return {} all the known repos
+' */
 Private Function getAllTheRepos(git As cVbaGit) As cJobject
     Dim result As cJobject
     Set result = git.getMyRepos
@@ -360,7 +440,14 @@ Private Function getAllTheRepos(git As cVbaGit) As cJobject
         Exit Function
     End If
 End Function
+'/**
+' * create any repos in our list of info objects that don't exist
+' * @param {} git a handle to the cVbaGit api
+' * @param {} infos a list of info objects
+' * @return {} all the known repos updated
+' */
 Private Function createRepos(git As cVbaGit, infos As cJobject) As cJobject
+
     Dim repos As cJobject, info As cJobject, repo As cJobject, result As cJobject, _
         added As Long, settings As cJobject, job As cJobject
     Set settings = getVGSettings
@@ -645,13 +732,15 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
         s As cStringChunker, d As cJobject, matchMod As cVBAmodule, proc As cVBAProcedure, _
         matches As MatchCollection, e As cJobject, pos As cJobject, _
         jo As cJobject, match As match, recurse As Boolean, procs As Collection, _
-        code As String, pName As String, ob As Object, alreadyThere As cJobject
+        code As String, pName As String, ob As Object, alreadyThere As cJobject, _
+        warned As Boolean
 
     Set c = New cStringChunker
     Set s = New cStringChunker
 
     recurse = False
-
+    warned = False
+    
     ' these are all the modules in the dependency list
     For Each job In dependencyList.child("dependencies").children
         ' get the local code
@@ -666,10 +755,12 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
             ' this is the position this code starts at - we'll need it later for finding where it came from
 
             With pos.add
-                ' clean up the code getting rid of dims and continuations
+                ' clean up the code getting rid of dims and continuations as well as th declaration
                 code = getRidOfDims( _
-                    straightenOutContinuations( _
-                        getRidOfComments(getRidOfQuoted(proc.getTheCode))))
+                         getRidOfComments( _
+                          getRidOfQuoted( _
+                           Replace( _
+                            straightenOutContinuations(proc.getTheCode), proc.declaration, ""))))
                 
                 ' remember where this code is stored
                 .add "start", s.size
@@ -701,7 +792,11 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
                         c.add(matchMod.name).add "|"
                         e.add matchMod.name, matchMod
                     Else
-                        Debug.Print matchMod.textKind & " " & matchMod.name & " is skipped - only doing class and stdmodules"
+                        If (Not warned) Then
+                            ' lets just tell this story one time
+                            Debug.Print matchMod.textKind & " " & matchMod.name & " is skipped - only doing class and stdmodules"
+                            warned = True
+                        End If
                     End If
                     
                 End If
@@ -725,39 +820,53 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
                         Set matchMod = ob
                     Else
                         Set matchMod = ob.parent
-                    End If
-                    Set alreadyThere = dependencyList.child("dependencies").findInArray("name", matchMod.name)
-                    If (alreadyThere Is Nothing) Then
-                        Set d = dependencyList.child("dependencies").add
-                        With d
-                            .add "module", matchMod
-                            .add "name", matchMod.name
-                            If (.childExists("cross") Is Nothing) Then
-                                .add("cross").addArray
-                            End If
-                        End With
-                        recurse = True
-                    Else
-                        Set d = alreadyThere.parent
-                    End If
-                    
-                    ' find who referenced it
-                    For Each jo In pos.children
-                        If match.FirstIndex >= jo.cValue("start") And match.FirstIndex _
-                            + match.Length <= jo.cValue("start") + jo.cValue("length") Then
-                            If (alreadyThere Is Nothing Or _
-                                d.child("cross").findInArray("name", jo.getObject("proc").name) Is Nothing) Then
-                            ' first time we're seeing a reference to it so add to cross reference
-                                With d.child("cross").add
-                                    .add "proc", ob
-                                    .add "by", jo.getObject("proc")
-                                    .add "name", jo.getObject("proc").name
-                                End With
-                            End If
-                            Exit For
+                        ' but if this is a local argument to this function,
+                        ' we dont need to look for references
+                        ' so treat it like it was never a match
+                        If (isinCollection(ob.arguments, LCase(pName))) Then
+                            Set matchMod = Nothing
                         End If
-                    Next jo
+                    End If
                     
+                    ' if we have found a proc/module decide if it needs to be added to depend list
+                    If isSomething(matchMod) Then
+                        Set alreadyThere = dependencyList.child("dependencies").findInArray("name", matchMod.name)
+                        
+                        ' first time we've seen it
+                        If (alreadyThere Is Nothing) Then
+                            Set d = dependencyList.child("dependencies").add
+                            With d
+                                .add "module", matchMod
+                                .add "name", matchMod.name
+                                If (.childExists("cross") Is Nothing) Then
+                                    .add("cross").addArray
+                                End If
+                            End With
+                            recurse = True
+                        Else
+                        
+                        ' we already know it
+                            Set d = alreadyThere.parent
+                        End If
+                    
+                        ' find who referenced it by the position at which it appeared
+                        For Each jo In pos.children
+                            If match.FirstIndex >= jo.cValue("start") And match.FirstIndex _
+                                + match.Length <= jo.cValue("start") + jo.cValue("length") Then
+                                If (alreadyThere Is Nothing Or _
+                                    d.child("cross").findInArray("name", jo.getObject("proc").name) Is Nothing) Then
+                                ' first time we're seeing a reference to it so add to cross reference
+                                    With d.child("cross").add
+                                        .add "proc", ob
+                                        .add "by", jo.getObject("proc")
+                                        .add "name", jo.getObject("proc").name
+                                    End With
+                                End If
+                                Exit For
+                            End If
+                        Next jo
+                    
+                    End If
                 Next match
             End If
         End If
@@ -853,7 +962,7 @@ Private Function makeExcelReferences(project As cVBAProject, addHere As cJobject
                 .add "guid", r.Guid
                 .add "major", r.major
                 .add "minor", r.minor
-                .add "description", r.Description
+                .add "description", r.description
             End With
         Next r
     End With
@@ -1290,7 +1399,8 @@ Private Function makeArguments(modl As cVBAmodule, info As cJobject) As String
     c.add("# VBA Project: **").add(info.toString("title")).addLine ("**")
     c.add("## VBA Module: **").add(findModLink(modl.name, info, "source is here", "fileName")).addLine ("**")
     c.add("### Type: ").add(modl.textKind).add("  ").addLines (2)
-    c.add("This procedure list for repo (").add(info.toString("repo")).add(") was automatically created on ").add(CStr(Now())).addLine (" by VBAGit.")
+    c.add("This procedure list for repo (").add (info.toString("repo"))
+    c.add(") was automatically created on ").add(CStr(Now())).addLine (" by VBAGit.")
     c.addLine ("For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready ""desktop liberation"")")
     c.addLine.add("Below is a section for each procedure in ").add (modl.name)
 
@@ -1300,14 +1410,20 @@ Private Function makeArguments(modl As cVBAmodule, info As cJobject) As String
         c.add("Type: **").add(proc.procTextKind).add("**").add("  ").addLine
         c.add("Returns: **").add(findModLink(proc.procReturns, info, , "docsName")).add("**").add("  ").addLine
         c.add("Scope: **").add(proc.scope).add("**").add("  ").addLine
+        c.add("Description: **").add(proc.description).add("**").add("  ").addLine
+
         c.addLine.add("*").add(proc.declaration).add("*").add("  ").addLines (2)
         
         If (proc.arguments.Count > 0) Then
-            c.addLine "*name*|*type*|*optional*|*default*"
-            c.addLine "---|---|---|---"
+            c.addLine "*name*|*type*|*optional*|*default*|*description*"
+            c.addLine "---|---|---|---|---"
             
             For Each a In proc.arguments
-                c.add(a.name).add("|").add(findModLink(a.argType, info, , "docsName")).add("|").add(a.isOptional).add("|").addLine (a.default)
+                c.add(a.name).add ("|")
+                c.add (findModLink(a.argType, info, , "docsName"))
+                c.add("|").add(a.isOptional).add ("|")
+                c.add(a.default).add ("|")
+                c.addLine (a.description)
             Next a
         Else
             c.addLine ("**no arguments required for this procedure**")
