@@ -6,6 +6,7 @@ Private pName As String
 Private pArgType As String
 Private pOptional As Boolean
 Private pDefault As String
+Private pDescription As String
 Public Property Get name() As String
     name = pName
 End Property
@@ -20,6 +21,12 @@ Public Property Get default() As String
 End Property
 Public Property Get isOptional() As Boolean
     isOptional = pOptional
+End Property
+Public Property Let description(p As String)
+    pDescription = p
+End Property
+Public Property Get description() As String
+    description = pDescription
 End Property
 Public Function init(m As cVBAProcedure, decString As String) As cVBAArgument
     Set pParent = m
