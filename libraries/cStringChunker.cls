@@ -11,6 +11,7 @@ Const defaultChunkSize = 64
 ' */
 
 '/**
+' * get the length of the current string
 ' *@return {long} the length of the current string
 ' */
 Public Property Get size() As Long
@@ -18,6 +19,7 @@ Public Property Get size() As Long
     size = pSize
 End Property
 '/**
+' * get the content of the current string
 ' *@return {string} the current string
 ' */
 Public Property Get content() As String
