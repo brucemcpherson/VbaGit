@@ -28,6 +28,21 @@ End Property
 Public Property Get procKind() As vbext_prockind
     procKind = pProcKind
 End Property
+'/**
+' * checks to see if a given variable name is an argument of this procedure
+' * @param {string} argName the name to check
+' * @return {boolean} whether it is an argument
+'*/
+Public Function isAnArgument(argName As String) As Boolean
+    Dim a As cVBAArgument
+    For Each a In arguments
+        If compareAsKey(argName, a.name) Then
+            isAnArgument = True
+            Exit Function
+        End If
+    Next a
+    isAnArgument = False
+End Function
 Public Function init(m As cVBAmodule, pn As String, pk As vbext_prockind) As cVBAProcedure
     Set pParent = m
     pProcKind = pk
