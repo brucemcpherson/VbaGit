@@ -2,7 +2,7 @@
 ## VBA Module: **[usefulcJobject](/libraries/usefulcJobject.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in usefulcJobject
@@ -11,6 +11,7 @@ Below is a section for each procedure in usefulcJobject
 VBA Procedure: **fromISODateTime**  
 Type: **Function**  
 Returns: **Date**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -25,6 +26,7 @@ iso|String|False||
 VBA Procedure: **toISODateTime**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -39,6 +41,7 @@ d|Date|False||
 VBA Procedure: **milliseconds**  
 Type: **Function**  
 Returns: **Double**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -53,6 +56,7 @@ d|Date|False||
 VBA Procedure: **JSONParse**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -69,6 +73,7 @@ complain|Boolean|True| True|
 VBA Procedure: **JSONStringify**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -84,6 +89,7 @@ blf|Boolean|True||
 VBA Procedure: **jSonArgs**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -98,6 +104,7 @@ options|String|False||
 VBA Procedure: **optionsExtend**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -113,6 +120,7 @@ defaultOptions|String|True| vbNullString|
 VBA Procedure: **ucJobjectMake**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -127,6 +135,7 @@ r|Variant|False||
 VBA Procedure: **ucJobjectChildValue**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -142,6 +151,7 @@ child|Variant|False||
 VBA Procedure: **ucJobjectLint**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -157,6 +167,7 @@ child|Variant|True||
 VBA Procedure: **cleanGoogleWire**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -171,6 +182,7 @@ sWire|String|False||
 VBA Procedure: **xmlStringToJobject**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -186,6 +198,7 @@ complain|Boolean|True| True|
 VBA Procedure: **docToJobject**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -201,6 +214,7 @@ complain|Boolean|True| True|
 VBA Procedure: **isArrayRoot**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -215,6 +229,7 @@ parent|IXMLDOMNode|False||
 VBA Procedure: **handleNodes**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -230,6 +245,7 @@ job|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **handleNode**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
