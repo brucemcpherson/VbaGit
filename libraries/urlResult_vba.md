@@ -2,7 +2,7 @@
 ## VBA Module: **[urlResult](/libraries/urlResult.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in urlResult
@@ -11,6 +11,7 @@ Below is a section for each procedure in urlResult
 VBA Procedure: **urlGet**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **a standard response**  
 Scope: **Public**  
 Description: **since I use this all the time,may as well make it a library**  
 
@@ -28,6 +29,7 @@ optBasic|Boolean|True| False|the access token is for basic auth
 VBA Procedure: **urlPost**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **a standard response**  
 Scope: **Public**  
 Description: **execute a post**  
 
@@ -47,6 +49,7 @@ optBasic|Boolean|True| False|the access token is for basic auth
 VBA Procedure: **urlExecute**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: **a standard response**  
 Scope: **Private**  
 Description: **execute a urlfetch**  
 
@@ -66,6 +69,7 @@ optBasic|Boolean|True| False|the access token is for basic auth
 VBA Procedure: **makeResults**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: **the result object**  
 Scope: **Private**  
 Description: **this is a standard result object to simply error checking etc.**  
 
