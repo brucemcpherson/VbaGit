@@ -2,7 +2,7 @@
 ## VBA Module: **[cVBAProcedure](/libraries/cVBAProcedure.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 25/03/2015 18:59:47 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 09:26:24 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cVBAProcedure
@@ -91,6 +91,20 @@ Description: ****
 *Public Property Get procKind() As vbext_prockind*  
 
 **no arguments required for this procedure**
+
+
+---
+VBA Procedure: **isAnArgument**  
+Type: **Function**  
+Returns: **Boolean**  
+Scope: **Public**  
+Description: **checks to see if a given variable name is an argument of this procedure**  
+
+*Public Function isAnArgument(argName As String) As Boolean*  
+
+*name*|*type*|*optional*|*default*|*description*
+---|---|---|---|---
+argName|String|False||the name to check
 
 
 ---
