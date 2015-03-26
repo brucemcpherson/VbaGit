@@ -2,7 +2,7 @@
 ## VBA Module: **[VbaGit](/scripts/VbaGit.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (VbaGit) was automatically created on 25/03/2015 18:59:47 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 09:26:24 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in VbaGit
@@ -319,6 +319,21 @@ Description: ****
 ---|---|---|---|---
 modules|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 dependencyList|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
+
+
+---
+VBA Procedure: **getPosProc**  
+Type: **Function**  
+Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Scope: **Private**  
+Description: **get the pos object the the procedure that provoked ths dependency**  
+
+*Private Function getPosProc(pos As cJobject, matchOb As match) As cJobject*  
+
+*name*|*type*|*optional*|*default*|*description*
+---|---|---|---|---
+pos|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||the position object for all the code of this module
+matchOb|match|False||the regex match that found this dependency
 
 
 ---
