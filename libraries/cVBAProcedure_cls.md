@@ -2,7 +2,7 @@
 ## VBA Module: **[cVBAProcedure](/libraries/cVBAProcedure.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cVBAProcedure
@@ -11,6 +11,7 @@ Below is a section for each procedure in cVBAProcedure
 VBA Procedure: **Class_Initialize**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -23,6 +24,7 @@ Description: ****
 VBA Procedure: **description**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -37,6 +39,7 @@ p|String|False||
 VBA Procedure: **description**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -46,9 +49,23 @@ Description: ****
 
 
 ---
+VBA Procedure: **returnDoc**  
+Type: **Get**  
+Returns: **String**  
+Return description: ****  
+Scope: **Public**  
+Description: ****  
+
+*Public Property Get returnDoc() As String*  
+
+**no arguments required for this procedure**
+
+
+---
 VBA Procedure: **name**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -61,6 +78,7 @@ Description: ****
 VBA Procedure: **arguments**  
 Type: **Get**  
 Returns: **Collection**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -73,6 +91,7 @@ Description: ****
 VBA Procedure: **parent**  
 Type: **Get**  
 Returns: **[cVBAmodule](/libraries/cVBAmodule_cls.md "cVBAmodule")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -85,6 +104,7 @@ Description: ****
 VBA Procedure: **procKind**  
 Type: **Get**  
 Returns: **vbext_prockind**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -97,6 +117,7 @@ Description: ****
 VBA Procedure: **isAnArgument**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: **whether it is an argument**  
 Scope: **Public**  
 Description: **checks to see if a given variable name is an argument of this procedure**  
 
@@ -111,6 +132,7 @@ argName|String|False||the name to check
 VBA Procedure: **init**  
 Type: **Function**  
 Returns: **[cVBAProcedure](/libraries/cVBAProcedure_cls.md "cVBAProcedure")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -127,6 +149,7 @@ pk|vbext_prockind|False||
 VBA Procedure: **tearDown**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -139,6 +162,7 @@ Description: ****
 VBA Procedure: **lineCount**  
 Type: **Get**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -151,6 +175,7 @@ Description: ****
 VBA Procedure: **codeModule**  
 Type: **Get**  
 Returns: **codeModule**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -163,6 +188,7 @@ Description: ****
 VBA Procedure: **startLine**  
 Type: **Get**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -175,6 +201,7 @@ Description: ****
 VBA Procedure: **removeComments**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -189,6 +216,7 @@ s|String|False||
 VBA Procedure: **getDescription**  
 Type: **Function**  
 Returns: **String**  
+Return description: **the procedure description**  
 Scope: **Public**  
 Description: **interprets jsdoc like procedure description**  
 
@@ -198,9 +226,23 @@ Description: **interprets jsdoc like procedure description**
 
 
 ---
+VBA Procedure: **getReturnDoc**  
+Type: **Function**  
+Returns: **String**  
+Return description: ****  
+Scope: **Private**  
+Description: ****  
+
+*Private Function getReturnDoc() As String*  
+
+**no arguments required for this procedure**
+
+
+---
 VBA Procedure: **dealWithArguments**  
 Type: **Function**  
 Returns: **[cVBAProcedure](/libraries/cVBAProcedure_cls.md "cVBAProcedure")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -215,6 +257,7 @@ dec|String|False||
 VBA Procedure: **scope**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -227,6 +270,7 @@ Description: ****
 VBA Procedure: **textKind**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -241,6 +285,7 @@ k|vbext_prockind|False||
 VBA Procedure: **procTextKind**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -253,6 +298,7 @@ Description: ****
 VBA Procedure: **procReturns**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -265,6 +311,7 @@ Description: ****
 VBA Procedure: **getTheCode**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -277,6 +324,7 @@ Description: ****
 VBA Procedure: **getFinishWithoutTrailingComments**  
 Type: **Function**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -289,6 +337,7 @@ Description: ****
 VBA Procedure: **getTheEndRx**  
 Type: **Function**  
 Returns: **RegExp**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -301,6 +350,7 @@ Description: ****
 VBA Procedure: **getTheCodePlusLeadingComments**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -313,6 +363,7 @@ Description: ****
 VBA Procedure: **declaration**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
