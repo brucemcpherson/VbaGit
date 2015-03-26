@@ -2,7 +2,7 @@
 ## VBA Module: **[usefulStuff](/libraries/usefulStuff.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:24 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:47 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in usefulStuff
@@ -11,6 +11,7 @@ Below is a section for each procedure in usefulStuff
 VBA Procedure: **OpenUrl**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -25,6 +26,7 @@ url|Variant|False||
 VBA Procedure: **deleteAllFromCollection**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -39,6 +41,7 @@ co|Collection|False||
 VBA Procedure: **UTF16To8**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -53,6 +56,7 @@ ByVal|String|False||
 VBA Procedure: **URLEncode**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -69,6 +73,7 @@ UTF8Encode|Boolean|True| True|
 VBA Procedure: **cloneFormat**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -84,6 +89,7 @@ a|Range|False||
 VBA Procedure: **compareAsKey**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -100,6 +106,7 @@ asKey|Boolean|True| True|
 VBA Procedure: **SortColl**  
 Type: **Function**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -115,6 +122,7 @@ eorder|Long|False||
 VBA Procedure: **getHandle**  
 Type: **Function**  
 Returns: **Integer**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -130,6 +138,7 @@ readOnly|Boolean|True| False|
 VBA Procedure: **afConcat**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -144,6 +153,7 @@ arr|Variant|False||
 VBA Procedure: **quote**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -158,6 +168,7 @@ s|String|False||
 VBA Procedure: **q**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -170,6 +181,7 @@ Description: ****
 VBA Procedure: **qs**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -182,6 +194,7 @@ Description: ****
 VBA Procedure: **bracket**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -196,6 +209,7 @@ s|String|False||
 VBA Procedure: **list**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -210,6 +224,7 @@ ParamArray|Variant|False||
 VBA Procedure: **qlist**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -224,6 +239,7 @@ ParamArray|Variant|False||
 VBA Procedure: **diminishingReturn**  
 Type: **Function**  
 Returns: **Double**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -239,6 +255,7 @@ s|Double|True| 10|
 VBA Procedure: **superTrim**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -253,6 +270,7 @@ s|String|False||
 VBA Procedure: **makeKey**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -267,6 +285,7 @@ v|Variant|False||
 VBA Procedure: **Base64Encode**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -281,6 +300,7 @@ sText|Variant|False||
 VBA Procedure: **Stream_StringToBinary**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -295,6 +315,7 @@ Text|Variant|False||
 VBA Procedure: **Stream_BinaryToString**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -309,6 +330,7 @@ Binary|Variant|False||
 VBA Procedure: **Base64Decode**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -323,6 +345,7 @@ ByVal|Variant|False||
 VBA Procedure: **openNewHtml**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -338,6 +361,7 @@ sContent|String|False||
 VBA Procedure: **readFromFile**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -352,6 +376,7 @@ sName|String|False||
 VBA Procedure: **arrayLength**  
 Type: **Function**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -366,6 +391,7 @@ a|Variant|False||
 VBA Procedure: **getControlValue**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -380,6 +406,7 @@ ctl|Object|False||
 VBA Procedure: **setControlValue**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -395,6 +422,7 @@ v|Variant|False||
 VBA Procedure: **isinCollection**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -410,6 +438,7 @@ sid|Variant|False||
 VBA Procedure: **dimensionCount**  
 Type: **Function**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -424,6 +453,7 @@ a|Variant|False||
 VBA Procedure: **encloseTag**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -441,6 +471,7 @@ args|Variant|True||
 VBA Procedure: **scrollHack**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -453,6 +484,7 @@ Description: ****
 VBA Procedure: **escapeify**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -467,6 +499,7 @@ s|String|False||
 VBA Procedure: **unEscapify**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -481,6 +514,7 @@ s|String|False||
 VBA Procedure: **basicStyle**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -493,6 +527,7 @@ Description: ****
 VBA Procedure: **tableStyle**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -505,6 +540,7 @@ Description: ****
 VBA Procedure: **is64BitExcel**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -517,6 +553,7 @@ Description: ****
 VBA Procedure: **includeJQuery**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -529,6 +566,7 @@ Description: ****
 VBA Procedure: **includeGoogleCallBack**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -543,6 +581,7 @@ c|String|False||
 VBA Procedure: **jScriptTag**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -557,6 +596,7 @@ src|String|True||
 VBA Procedure: **jDivAtMouse**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -569,6 +609,7 @@ Description: ****
 VBA Procedure: **biasedRandom**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -584,6 +625,7 @@ weights|Variant|False||
 VBA Procedure: **sleep**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -598,6 +640,7 @@ seconds|Long|False||
 VBA Procedure: **getDateFromTimestamp**  
 Type: **Function**  
 Returns: **Date**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -612,6 +655,7 @@ s|String|False||
 VBA Procedure: **dateFromUnix**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -626,6 +670,7 @@ s|Variant|False||
 VBA Procedure: **isSomething**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -640,6 +685,7 @@ o|Object|False||
 VBA Procedure: **tinyTime**  
 Type: **Function**  
 Returns: **Double**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -652,6 +698,7 @@ Description: ****
 VBA Procedure: **applyDefaults**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -667,6 +714,7 @@ defaultValue|Variant|False||
 VBA Procedure: **isUndefined**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -681,6 +729,7 @@ value|Variant|False||
 VBA Procedure: **conditionalAssignment**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -697,6 +746,7 @@ b|Variant|False||
 VBA Procedure: **assignHelper**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -711,6 +761,7 @@ a|Variant|False||
 VBA Procedure: **getTimestampFromDate**  
 Type: **Function**  
 Returns: **Double**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -725,6 +776,7 @@ dt|Date|True| 0|
 VBA Procedure: **checkOrCreateFolder**  
 Type: **Function**  
 Returns: **Object**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -740,6 +792,7 @@ optCreate|Boolean|True| True|
 VBA Procedure: **recurseCreateFolder**  
 Type: **Function**  
 Returns: **Object**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -755,6 +808,7 @@ cleanPath|String|False||
 VBA Procedure: **writeToFolderFile**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -771,6 +825,7 @@ content|String|False||
 VBA Procedure: **getAllSubFolderPaths**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -785,6 +840,7 @@ folderName|String|False||
 VBA Procedure: **readFromFolderFile**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -800,6 +856,7 @@ fileName|String|False||
 VBA Procedure: **fileExists**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -814,6 +871,7 @@ path|String|False||
 VBA Procedure: **concatFolderName**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
