@@ -49,14 +49,17 @@ Private Function getTokenFromBasic(basicHash As String, clientHash As String) As
     End If
     getTokenFromBasic = result.getObject("data").toString("token")
 End Function
-
+Public Function isAccessToken() As Boolean
+    isAccessToken = pAccessToken <> vbNullString
+End Function
 Public Function setAccessToken(basic As String, client As String) As cVbaGit
     If (isUndefined(basic) Or isUndefined(client)) Then
-        throw "accesstoken cant be defined from blank credentials"
+        Debug.Print "no access token provided"
+    Else
+        ' convert basic hash for an access token
+        pAccessToken = getTokenFromBasic(basic, client)
+        Set setAccessToken = Me
     End If
-    ' convert basic hash for an access token
-    pAccessToken = getTokenFromBasic(basic, client)
-    Set setAccessToken = Me
 End Function
 '  /**
 '   * get all my repos
