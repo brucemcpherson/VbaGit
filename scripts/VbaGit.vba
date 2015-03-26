@@ -35,7 +35,7 @@ Public Sub doEverything()
     'doExtraction "cDataSet", "cDataSet"
     'doExtraction "excelRestLibrary", "restLibrary,cRest"
     ' now write them to git
-    doGit
+    'doGit
     
 End Sub
 '/**
