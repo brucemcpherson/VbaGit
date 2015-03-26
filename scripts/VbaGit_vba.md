@@ -2,7 +2,7 @@
 ## VBA Module: **[VbaGit](/scripts/VbaGit.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in VbaGit
@@ -11,6 +11,7 @@ Below is a section for each procedure in VbaGit
 VBA Procedure: **doEverything**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: **example of exporting/importing a repos from github**  
 
@@ -23,6 +24,7 @@ Description: **example of exporting/importing a repos from github**
 VBA Procedure: **doTheImport**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: **example of importing a repo from github and replaces the code in the companion wokbook**  
 
@@ -35,6 +37,7 @@ Description: **example of importing a repo from github and replaces the code in 
 VBA Procedure: **deleteThisAfterRunningOnce**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: **the settings**  
 Scope: **Private**  
 Description: **sets up your credentials in the windows registry.**  
 
@@ -47,6 +50,7 @@ Description: **sets up your credentials in the windows registry.**
 VBA Procedure: **getVGSettings**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: **the settings**  
 Scope: **Public**  
 Description: **sets up the settings object if its not already set up and returns it**  
 
@@ -61,6 +65,7 @@ force|Boolean|True||whether to force a new set up
 VBA Procedure: **doImportFromGit**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: **do the import from github and replace the modules in the companion workbook**  
 
@@ -77,6 +82,7 @@ applyExcelReferences|Boolean|True| False|whether to apply the excel references i
 VBA Procedure: **getCodeFromGit**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: **get the code from git for a particular module**  
 
@@ -96,6 +102,7 @@ repo|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||the repo object co
 VBA Procedure: **replaceModule**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: **whether it was successful**  
 Scope: **Private**  
 Description: **get the code from git for a particular module**  
 
@@ -112,6 +119,7 @@ code|String|False||the new code to use
 VBA Procedure: **getRepo**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **the repo object**  
 Scope: **Private**  
 Description: **get the code from git for a particular module**  
 
@@ -128,6 +136,7 @@ complain|Boolean|True| True|whether to complain on failure
 VBA Procedure: **doExtraction**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: **extract the files for a particular project and write them to the staging area**  
 
@@ -144,6 +153,7 @@ projectName|String|True| vbNullString|the name of the vba project
 VBA Procedure: **testmodulestuff**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -156,6 +166,7 @@ Description: ****
 VBA Procedure: **doGit**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: **call this to commit all extracted projects to github them from the staging area**  
 
@@ -170,6 +181,7 @@ specificRepoName|String|True| vbNullString|the name of the repo - if blank it wi
 VBA Procedure: **getAllTheRepos**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **all the known repos**  
 Scope: **Private**  
 Description: **get all known repos belonging to the git logged in individual**  
 
@@ -184,6 +196,7 @@ git|[cVbaGit](/libraries/cVbaGit_cls.md "cVbaGit")|False||a handle to the cVbaGi
 VBA Procedure: **createRepos**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **all the known repos updated**  
 Scope: **Private**  
 Description: **create any repos in our list of info objects that don't exist**  
 
@@ -199,6 +212,7 @@ infos|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||a list of info ob
 VBA Procedure: **writeTheSource**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -216,6 +230,7 @@ repo|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **writeTheFiles**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -233,6 +248,7 @@ repo|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **getAllInfoFiles**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -247,6 +263,7 @@ specificRepoName|String|True| vbNullString|
 VBA Procedure: **writeInfoFile**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -264,6 +281,7 @@ dependencyList|[cJobject](/libraries/cJobject_cls.md "cJobject")|True| Nothing|
 VBA Procedure: **writeToStagingArea**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -279,6 +297,7 @@ dependencyList|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **getDependencyList**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -295,6 +314,7 @@ optListOfModules|String|True| vbNullString|
 VBA Procedure: **findProc**  
 Type: **Function**  
 Returns: **[cVBAProcedure](/libraries/cVBAProcedure_cls.md "cVBAProcedure")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -310,6 +330,7 @@ targetName|String|False||
 VBA Procedure: **dependencyResolve**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -325,6 +346,7 @@ dependencyList|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **getPosProc**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: **get the pos object the the procedure that provoked ths dependency**  
 
@@ -340,6 +362,7 @@ matchOb|match|False||the regex match that found this dependency
 VBA Procedure: **makeCrossReferenceJob**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -354,6 +377,7 @@ dependencyList|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **registerExcelReferences**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -369,6 +393,7 @@ references|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **registerExcelReference**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -384,6 +409,7 @@ job|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **makeExcelReferences**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -399,6 +425,7 @@ addHere|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **isModuleObj**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -413,6 +440,7 @@ ob|Object|False||
 VBA Procedure: **getVbaAsJobject**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -427,6 +455,7 @@ optProjectName|String|True| vbNullString|
 VBA Procedure: **blowProcedures**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -441,6 +470,7 @@ module|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **blowArguments**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -456,6 +486,7 @@ argOb|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **getProjects**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -470,6 +501,7 @@ optProjectName|String|True| vbNullString|
 VBA Procedure: **getProcList**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -484,6 +516,7 @@ module|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **getmoduleList**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -498,6 +531,7 @@ project|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **makeInfoFile**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -513,6 +547,7 @@ dependencyList|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **modulesToInfo**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -530,6 +565,7 @@ folderName|String|False||
 VBA Procedure: **mdWrap**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -542,6 +578,7 @@ Description: ****
 VBA Procedure: **makeCross**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -557,6 +594,7 @@ info|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **makeReadMe**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -571,6 +609,7 @@ info|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **makeDependency**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -586,6 +625,7 @@ info|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **constructModLink**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -603,6 +643,7 @@ hover|String|False||
 VBA Procedure: **makeArguments**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -618,6 +659,7 @@ info|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **findModLink**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -635,6 +677,7 @@ fn|String|True| "docsName"|
 VBA Procedure: **getFromVbaGitRegistry**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -649,6 +692,7 @@ key|Variant|False||
 VBA Procedure: **setVbaGitRegistry**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -664,6 +708,7 @@ value|Variant|False||
 VBA Procedure: **getGitBasicCredentials**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -676,6 +721,7 @@ Description: ****
 VBA Procedure: **setGitBasicCredentials**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -691,6 +737,7 @@ pass|String|False||
 VBA Procedure: **setGitClientCredentials**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -706,6 +753,7 @@ clientSecret|String|False||
 VBA Procedure: **getGitClientCredentials**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
