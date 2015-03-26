@@ -2,7 +2,7 @@
 ## VBA Module: **[regXLib](/libraries/regXLib.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in regXLib
@@ -11,6 +11,7 @@ Below is a section for each procedure in regXLib
 VBA Procedure: **rxString**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -27,6 +28,7 @@ ignorecase|Boolean|True| True|
 VBA Procedure: **rxGroup**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -44,6 +46,7 @@ ignorecase|Boolean|True| True|
 VBA Procedure: **rxTest**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -60,6 +63,7 @@ ignorecase|Boolean|True| True|
 VBA Procedure: **rxReplace**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -77,6 +81,7 @@ ignorecase|Boolean|True| True|
 VBA Procedure: **rxPattern**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -91,6 +96,7 @@ sName|String|False||
 VBA Procedure: **rxMakeRxLib**  
 Type: **Function**  
 Returns: **[cregXLib](/libraries/cregXLib_cls.md "cregXLib")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
