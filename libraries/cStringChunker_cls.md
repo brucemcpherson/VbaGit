@@ -2,7 +2,7 @@
 ## VBA Module: **[cStringChunker](/libraries/cStringChunker.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:06:23 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cStringChunker
@@ -11,8 +11,9 @@ Below is a section for each procedure in cStringChunker
 VBA Procedure: **size**  
 Type: **Get**  
 Returns: **Long**  
+Return description: **the length of the current string**  
 Scope: **Public**  
-Description: **@return {long} the length of the current string**  
+Description: **get the length of the current string**  
 
 *Public Property Get size() As Long*  
 
@@ -23,8 +24,9 @@ Description: **@return {long} the length of the current string**
 VBA Procedure: **content**  
 Type: **Get**  
 Returns: **String**  
+Return description: **the current string**  
 Scope: **Public**  
-Description: **@return {string} the current string**  
+Description: **get the content of the current string**  
 
 *Public Property Get content() As String*  
 
@@ -35,6 +37,7 @@ Description: **@return {string} the current string**
 VBA Procedure: **getLeft**  
 Type: **Get**  
 Returns: **String**  
+Return description: **the current string**  
 Scope: **Public**  
 Description: **extract the leftmost portion of a string**  
 
@@ -49,6 +52,7 @@ howMany|Long|False||the length of the string to return
 VBA Procedure: **getRight**  
 Type: **Get**  
 Returns: **String**  
+Return description: **the current string**  
 Scope: **Public**  
 Description: **extract the rightmost portion of a string**  
 
@@ -63,6 +67,7 @@ howMany|Long|False||the length of the string to return
 VBA Procedure: **getMid**  
 Type: **Get**  
 Returns: **String**  
+Return description: **the current string**  
 Scope: **Public**  
 Description: **extract a portion of a string**  
 
@@ -78,6 +83,7 @@ howMany|Long|True| -1|the length of the string to return
 VBA Procedure: **self**  
 Type: **Get**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **a self reference (useful for inside with..)**  
 
@@ -90,6 +96,7 @@ Description: **a self reference (useful for inside with..)**
 VBA Procedure: **clear**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **clear a chunker (set string to null)**  
 
@@ -102,6 +109,7 @@ Description: **clear a chunker (set string to null)**
 VBA Procedure: **uri**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **encode a uri and add**  
 
@@ -116,6 +124,7 @@ url|String|False||the url to add
 VBA Procedure: **toString**  
 Type: **Function**  
 Returns: **String**  
+Return description: **the string**  
 Scope: **Public**  
 Description: **return the string**  
 
@@ -128,6 +137,7 @@ Description: **return the string**
 VBA Procedure: **add**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **add a string to the chunker**  
 
@@ -142,6 +152,7 @@ addString|String|False||the string to add
 VBA Procedure: **addLine**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **add a string to the chunker, followed by a new line**  
 
@@ -156,6 +167,7 @@ addString|String|True| ""|the string to add
 VBA Procedure: **addLines**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **add a number of new lines**  
 
@@ -170,6 +182,7 @@ howMany|Long|True| 1|number of lines to add
 VBA Procedure: **insert**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **insert a string at a particular position**  
 
@@ -185,6 +198,7 @@ insertBefore|Long|True| 1|the position(base 1) before which to insert
 VBA Procedure: **overWrite**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **overwrite a string at a particular position**  
 
@@ -200,6 +214,7 @@ overWriteAt|Long|True| 1|the position(base 1) to start overwriting at
 VBA Procedure: **shift**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **shift the contents inside the chunker space**  
 
@@ -216,6 +231,7 @@ replaceWith|String|True| vbNullString|what to replace the moved contents with
 VBA Procedure: **chop**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **chop characters from the end of the content**  
 
@@ -230,6 +246,7 @@ howMany|Long|True| 1|number of characters to chop
 VBA Procedure: **chopSuperTrim**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **trim \s type chars from beginning and end**  
 
@@ -245,6 +262,7 @@ fromEnd|Boolean|True| True|trim the end of the content
 VBA Procedure: **chopIf**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **trim chars from end of content**  
 
@@ -259,6 +277,7 @@ chopString|String|False||trim the beginnging of the content
 VBA Procedure: **chopWhile**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Public**  
 Description: **trim chars from end of content and keep doing it while it matches**  
 
@@ -273,6 +292,7 @@ chopString|String|False||trim the beginnging of the content
 VBA Procedure: **maxNumber**  
 Type: **Function**  
 Returns: **Long**  
+Return description: **the bigger of a and b**  
 Scope: **Private**  
 Description: **local max function**  
 
@@ -288,6 +308,7 @@ b|Long|False||second number to compare
 VBA Procedure: **minNumber**  
 Type: **Function**  
 Returns: **Long**  
+Return description: **the smaller of a and b**  
 Scope: **Private**  
 Description: **local min function**  
 
@@ -303,6 +324,7 @@ b|Long|False||second number to compare
 VBA Procedure: **adjustSize**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: **self**  
 Scope: **Private**  
 Description: **adjust the underlying chunker buffer size if its needed**  
 
@@ -317,6 +339,7 @@ needMore|Long|False||how many chars we want space for
 VBA Procedure: **Class_Initialize**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: **intialize some starting buffer**  
 
