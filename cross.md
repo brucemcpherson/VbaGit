@@ -1,5 +1,5 @@
 # VBA Project: VbaGit
-This cross reference list for repo (VbaGit) was automatically created on 25/03/2015 18:59:47 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
+This cross reference list for repo (VbaGit) was automatically created on 26/03/2015 09:26:24 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 You can see [library and dependency information here](dependencies.md)
 
 ###Below is a cross reference showing which modules and procedures reference which others
@@ -54,9 +54,9 @@ usefulStuff|checkOrCreateFolder|VbaGit|writeInfoFile
 usefulStuff|conditionalAssignment|VbaGit|modulesToInfo
 usefulStuff|getAllSubFolderPaths|VbaGit|getAllInfoFiles
 usefulStuff|getTimestampFromDate|VbaGit|makeInfoFile
-usefulStuff|isinCollection|VbaGit|dependencyResolve
 usefulStuff|isSomething|VbaGit|makeCrossReferenceJob
 usefulStuff|isSomething|VbaGit|getDependencyList
+usefulStuff|isSomething|VbaGit|dependencyResolve
 usefulStuff|isUndefined|VbaGit|deleteThisAfterRunningOnce
 usefulStuff|isUndefined|VbaGit|getVGSettings
 usefulStuff|readFromFolderFile|VbaGit|writeTheFiles
