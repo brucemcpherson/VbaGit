@@ -1,7 +1,7 @@
 Option Explicit
 ' this is based on the ideas from http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready
 ' and is about getting your excel code to github
-' VbaGit v0.1
+' VbaGit v0.2.2
 
 ' settings are in public var
 Dim VGSettings As cJobject
@@ -31,10 +31,11 @@ Public Sub doEverything()
 '    doExtraction "excelProgressBar", "TestProgressBar"
 
     doExtraction "VbaGit", "VbaGit"
-    doExtraction "cVBAProject", "cVBAProject"
-    doExtraction "cJobject", "cJobject"
+    'doExtraction "cVBAProject", "cVBAProject,cVBAProcedure,cVBAmodule,cVBAArgument"
+    'doExtraction "cDataSet", "cDataSet"
+    'doExtraction "excelRestLibrary", "restLibrary,cRest"
     ' now write them to git
-    'doGit
+    doGit
     
 End Sub
 '/**
@@ -43,6 +44,7 @@ End Sub
 Public Sub doTheImport()
     ' this is the something I want to import into the companion workbook
     'doImportFromGit "cJobject"
+
 End Sub
 
 ' NOTES ON IMPORTING CODE FROM GITHUB
@@ -204,8 +206,13 @@ Public Sub doImportFromGit(repoName As String, _
         
         ' actually we are using basic authentication
         ' this optional, if you have already setup a github app
-        ''git.setAccessToken getGitBasicCredentials(), getGitClientCredentials()
-    
+        ' it will also get you more quota
+        ' if not then you can comment this out
+        git.setAccessToken getGitBasicCredentials(), getGitClientCredentials()
+        If (Not git.isAccessToken) Then
+            Debug.Print "you are using an unauthenticated git connection with limited quota"
+        End If
+        
         ' get the repo
         Set repo = getRepo(git, repoName).getObject("data")
         
@@ -417,10 +424,12 @@ Private Sub doGit(Optional specificRepoName As String = vbNullString)
     
     ' actually we are using basic authentication
     git.setAccessToken getGitBasicCredentials(), getGitClientCredentials()
-    
+    If (Not git.isAccessToken) Then
+        MsgBox ("you cannot commit to git without authentication- please set up")
+    Else
     ' get all the repos, creating any missing ones, and adding all the files
-    Set repos = createRepos(git, allInfoFiles)
-
+        Set repos = createRepos(git, allInfoFiles)
+    End If
     ' clean up
     allInfoFiles.tearDown
     repos.tearDown
@@ -816,7 +825,7 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
                 ' add to the dependency list
                 For Each match In matches
                     pName = CStr(match.SubMatches(0))
-                    Debug.Assert pName <> "respectFilter"
+                   
 
                     ' find who referenced it by the position at which it appeared
                     Set posProc = getPosProc(pos, match)
@@ -1307,7 +1316,8 @@ Private Function makeReadMe(info As cJobject) As String
     c.addLine ("For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/vbagit ""desktop liberation"")")
     c.add ("you can see [library and dependency information here](")
     c.add(getVGSettings().toString("FILES.DEPENDENCIES")).addLine(")").addLine ("")
-    c.add ("To get started with VBA Git, you can either create a workbook with the code here in it, or use this premade [VbaBootStrap workbook](http://ramblings.mcpher.com/Home/excelquirks/downlable-items/VbaGitBootStrap.xlsm ""VbaBootStrap"")")
+    c.add ("To get started with VBA Git, you can either create a workbook with the [code on gitHub](https://github.com/brucemcpherson/VbaGit ""VbaGit repo"")")
+    c.add (", or use this premade [VbaBootStrap workbook](http://ramblings.mcpher.com/Home/excelquirks/downlable-items/VbaGitBootStrap.xlsm ""VbaBootStrap"")")
     c.add (mdWrap)
     c.add ("Now update manually with details of this project - this skeleton file is committed only when there is no README.md in the repo.")
 
