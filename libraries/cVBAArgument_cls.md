@@ -2,7 +2,7 @@
 ## VBA Module: **[cVBAArgument](/libraries/cVBAArgument.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cVBAArgument
@@ -11,6 +11,7 @@ Below is a section for each procedure in cVBAArgument
 VBA Procedure: **name**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -23,6 +24,7 @@ Description: ****
 VBA Procedure: **parent**  
 Type: **Get**  
 Returns: **[cVBAProcedure](/libraries/cVBAProcedure_cls.md "cVBAProcedure")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -35,6 +37,7 @@ Description: ****
 VBA Procedure: **argType**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -47,6 +50,7 @@ Description: ****
 VBA Procedure: **default**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -59,6 +63,7 @@ Description: ****
 VBA Procedure: **isOptional**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -71,6 +76,7 @@ Description: ****
 VBA Procedure: **description**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -85,6 +91,7 @@ p|String|False||
 VBA Procedure: **description**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -97,6 +104,7 @@ Description: ****
 VBA Procedure: **init**  
 Type: **Function**  
 Returns: **[cVBAArgument](/libraries/cVBAArgument_cls.md "cVBAArgument")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -112,6 +120,7 @@ decString|String|False||
 VBA Procedure: **tearDown**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
