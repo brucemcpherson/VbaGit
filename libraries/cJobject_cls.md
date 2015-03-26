@@ -2,7 +2,7 @@
 ## VBA Module: **[cJobject](/libraries/cJobject.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cJobject
@@ -11,6 +11,7 @@ Below is a section for each procedure in cJobject
 VBA Procedure: **backtrack**  
 Type: **Get**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -23,6 +24,7 @@ Description: ****
 VBA Procedure: **backtrack**  
 Type: **Set**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -37,6 +39,7 @@ back|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **self**  
 Type: **Get**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -49,6 +52,7 @@ Description: ****
 VBA Procedure: **isValid**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -61,6 +65,7 @@ Description: ****
 VBA Procedure: **setValid**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -75,6 +80,7 @@ good|Boolean|False||
 VBA Procedure: **jString**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -87,6 +93,7 @@ Description: ****
 VBA Procedure: **fake**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -99,6 +106,7 @@ Description: ****
 VBA Procedure: **childIndex**  
 Type: **Get**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -111,6 +119,7 @@ Description: ****
 VBA Procedure: **childIndex**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -125,6 +134,7 @@ p|Long|False||
 VBA Procedure: **isArrayRoot**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -137,6 +147,7 @@ Description: ****
 VBA Procedure: **isArrayMember**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -149,6 +160,7 @@ Description: ****
 VBA Procedure: **isArrayRoot**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -163,6 +175,7 @@ p|Boolean|False||
 VBA Procedure: **parent**  
 Type: **Get**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -175,6 +188,7 @@ Description: ****
 VBA Procedure: **parent**  
 Type: **Set**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -189,6 +203,7 @@ p|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **isRoot**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -201,6 +216,7 @@ Description: ****
 VBA Procedure: **clearParent**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -213,6 +229,7 @@ Description: ****
 VBA Procedure: **root**  
 Type: **Get**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -225,6 +242,7 @@ Description: ****
 VBA Procedure: **key**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -237,6 +255,7 @@ Description: ****
 VBA Procedure: **value**  
 Type: **Get**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -249,6 +268,7 @@ Description: ****
 VBA Procedure: **setValue**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -263,6 +283,7 @@ p|Variant|False||
 VBA Procedure: **isVoid**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -277,6 +298,7 @@ childName|String|True| vbNullString|
 VBA Procedure: **isObjValue**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -291,6 +313,7 @@ childName|String|True| vbNullString|
 VBA Procedure: **cValue**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -305,6 +328,7 @@ childName|String|True| vbNullString|
 VBA Procedure: **kids**  
 Type: **Function**  
 Returns: **Collection**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -319,6 +343,7 @@ childName|String|True| vbNullString|
 VBA Procedure: **toString**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -333,6 +358,7 @@ childName|String|True| vbNullString|
 VBA Procedure: **getObject**  
 Type: **Get**  
 Returns: **Object**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -347,6 +373,7 @@ childName|String|True| vbNullString|
 VBA Procedure: **value**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -361,6 +388,7 @@ p|Variant|False||
 VBA Procedure: **children**  
 Type: **Get**  
 Returns: **Collection**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -373,6 +401,7 @@ Description: ****
 VBA Procedure: **children**  
 Type: **Set**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -387,6 +416,7 @@ p|Collection|False||
 VBA Procedure: **hasChildren**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -399,6 +429,7 @@ Description: ****
 VBA Procedure: **deleteChild**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -413,6 +444,7 @@ childName|String|False||
 VBA Procedure: **valueIndex**  
 Type: **Function**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -427,6 +459,7 @@ v|Variant|False||
 VBA Procedure: **toTreeView**  
 Type: **Function**  
 Returns: **Object**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -442,6 +475,7 @@ bEnableCheckBoxes|Boolean|True| False|
 VBA Procedure: **treeViewPopulate**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -458,6 +492,7 @@ parent|[cJobject](/libraries/cJobject_cls.md "cJobject")|True| Nothing|
 VBA Procedure: **init**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -474,6 +509,7 @@ v|Variant|True| Empty|
 VBA Procedure: **child**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -488,6 +524,7 @@ s|String|False||
 VBA Procedure: **insert**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -503,6 +540,7 @@ v|Variant|True| Empty|
 VBA Procedure: **add**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -518,6 +556,7 @@ v|Variant|True| Empty|
 VBA Procedure: **addArray**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -530,6 +569,7 @@ Description: ****
 VBA Procedure: **childExists**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -544,6 +584,7 @@ s|String|False||
 VBA Procedure: **unSplitToString**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -562,6 +603,7 @@ startAtEnd|Boolean|True| False|
 VBA Procedure: **findInArray**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -578,6 +620,7 @@ asKey|Boolean|True| True|
 VBA Procedure: **find**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -592,6 +635,7 @@ s|String|False||
 VBA Procedure: **convertToArray**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -604,6 +648,7 @@ Description: ****
 VBA Procedure: **fullKey**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -618,6 +663,7 @@ includeRoot|Boolean|True| True|
 VBA Procedure: **findByValue**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -632,6 +678,7 @@ x|Variant|False||
 VBA Procedure: **hasKey**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -644,6 +691,7 @@ Description: ****
 VBA Procedure: **needsCurly**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -656,6 +704,7 @@ Description: ****
 VBA Procedure: **needsSquare**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -668,6 +717,7 @@ Description: ****
 VBA Procedure: **stringify**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -682,6 +732,7 @@ blf|Boolean|True||
 VBA Procedure: **serialize**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -696,6 +747,7 @@ blf|Boolean|True| False|
 VBA Procedure: **needsIndent**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -708,6 +760,7 @@ Description: ****
 VBA Procedure: **recurseSerialize**  
 Type: **Function**  
 Returns: **[cStringChunker](/libraries/cStringChunker_cls.md "cStringChunker")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -724,6 +777,7 @@ blf|Boolean|True| False|
 VBA Procedure: **longestFullKey**  
 Type: **Get**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -736,6 +790,7 @@ Description: ****
 VBA Procedure: **clone**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -748,6 +803,7 @@ Description: ****
 VBA Procedure: **arrayAppend**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -762,6 +818,7 @@ arrJob|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **mergeArrayOfJobs**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -774,6 +831,7 @@ Description: ****
 VBA Procedure: **replaceBranch**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -788,6 +846,7 @@ byThis|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **merge**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -802,6 +861,7 @@ mergeThisIntoMe|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **remove**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -814,6 +874,7 @@ Description: ****
 VBA Procedure: **append**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -828,6 +889,7 @@ appendThisToMe|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **depth**  
 Type: **Get**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -842,6 +904,7 @@ l|Long|True| 0|
 VBA Procedure: **clongestFullKey**  
 Type: **Function**  
 Returns: **Long**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -857,6 +920,7 @@ soFar|Long|True| 0|
 VBA Procedure: **formatData**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -871,6 +935,7 @@ bDebug|Boolean|True| False|
 VBA Procedure: **cformatdata**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -887,6 +952,7 @@ bDebug|Boolean|True| False|
 VBA Procedure: **itemFormat**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -902,6 +968,7 @@ bDebug|Boolean|True| False|
 VBA Procedure: **jdebug**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -914,6 +981,7 @@ Description: ****
 VBA Procedure: **quote**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -928,6 +996,7 @@ s|String|False||
 VBA Procedure: **parse**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **the branch header**  
 Scope: **Public**  
 Description: **this will take a JSON string and parse it into a cJobject branch under ME**  
 
@@ -945,6 +1014,7 @@ dealWithLikelyTimestamps|Boolean|True| True|whether to convert things that look 
 VBA Procedure: **deSerialize**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **the branch header**  
 Scope: **Public**  
 Description: **this will take a JSON string and deserialize into a cJobject branch under ME**  
 
@@ -962,6 +1032,7 @@ dealWithLikelyTimestamps|Boolean|True| True|whether to convert things that look 
 VBA Procedure: **sever**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -974,6 +1045,7 @@ Description: ****
 VBA Procedure: **noisyTrim**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -988,6 +1060,7 @@ s|String|False||
 VBA Procedure: **nullItem**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1002,6 +1075,7 @@ job|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 VBA Procedure: **dsLoop**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1018,6 +1092,7 @@ dealWithLikelyTimestamps|Boolean|False||
 VBA Procedure: **okWhat**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1032,6 +1107,7 @@ what|String|False||
 VBA Procedure: **peekNextToken**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1044,6 +1120,7 @@ Description: ****
 VBA Procedure: **doNextToken**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1056,6 +1133,7 @@ Description: ****
 VBA Procedure: **dsProcess**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1072,6 +1150,7 @@ dealWithLikelyTimestamps|Boolean|False||
 VBA Procedure: **nOk**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1084,6 +1163,7 @@ Description: ****
 VBA Procedure: **getvItem**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1100,6 +1180,7 @@ nextToken|String|True| vbNullString|
 VBA Procedure: **peek**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1112,6 +1193,7 @@ Description: ****
 VBA Procedure: **peekBehind**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1124,6 +1206,7 @@ Description: ****
 VBA Procedure: **toNumber**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1139,6 +1222,7 @@ dealWithLikelyTimestamps|Boolean|False||
 VBA Procedure: **pointedAt**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1154,6 +1238,7 @@ sLen|Long|True| 1|
 VBA Procedure: **getQuotedItem**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1168,6 +1253,7 @@ whichQ|String|True| ""|
 VBA Procedure: **getNumericItem**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1180,6 +1266,7 @@ Description: ****
 VBA Procedure: **isQuote**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1195,6 +1282,7 @@ whichQ|String|True| ""|
 VBA Procedure: **badJSON**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1211,6 +1299,7 @@ complain|Boolean|True| True|
 VBA Procedure: **ignoreNoise**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1226,6 +1315,7 @@ extraNoise|String|True| ""|
 VBA Procedure: **isNoisy**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1241,6 +1331,7 @@ extraNoise|String|True| ""|
 VBA Procedure: **isEscape**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1255,6 +1346,7 @@ s|String|False||
 VBA Procedure: **isUnicode**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1269,6 +1361,7 @@ s|String|False||
 VBA Procedure: **q**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1281,6 +1374,7 @@ Description: ****
 VBA Procedure: **qs**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1293,6 +1387,7 @@ Description: ****
 VBA Procedure: **anyQ**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1305,6 +1400,7 @@ Description: ****
 VBA Procedure: **sortByValue**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -1317,6 +1413,7 @@ Description: ****
 VBA Procedure: **needSwap**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -1332,6 +1429,7 @@ e|eSort|False||
 VBA Procedure: **Class_Initialize**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -1344,6 +1442,7 @@ Description: ****
 VBA Procedure: **tearDown**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
