@@ -35,7 +35,7 @@ Public Sub doEverything()
     'doExtraction "cDataSet", "cDataSet"
     'doExtraction "excelRestLibrary", "restLibrary,cRest"
     ' now write them to git
-    'doGit
+    doGit "VbaGit"
     
 End Sub
 '/**
@@ -1443,6 +1443,7 @@ Private Function makeArguments(modl As cVBAmodule, info As cJobject) As String
         c.add("VBA Procedure: **").add(proc.name).add("**").add("  ").addLine
         c.add("Type: **").add(proc.procTextKind).add("**").add("  ").addLine
         c.add("Returns: **").add(findModLink(proc.procReturns, info, , "docsName")).add("**").add("  ").addLine
+        c.add("Return description: **").add(proc.returnDoc).add("**").add("  ").addLine
         c.add("Scope: **").add(proc.scope).add("**").add("  ").addLine
         c.add("Description: **").add(proc.description).add("**").add("  ").addLine
 
