@@ -1,5 +1,5 @@
 # VBA Project: VbaGit
-This repo (VbaGit) was automatically created on 26/03/2015 09:26:24 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
+This repo (VbaGit) was automatically created on 26/03/2015 09:33:12 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
 ## Details for VBA project VbaGit
 Where possibile directly referenced or sub referenced library sources have been copied to this repository  
 ### Modules of VbaGit included in this repo
@@ -20,7 +20,6 @@ cVBAmodule|ClassModule|[cVBAmodule.cls](libraries/cVBAmodule.cls "library source
 cVBAProject|ClassModule|[cVBAProject.cls](libraries/cVBAProject.cls "library source")|[cVBAProject_cls.md](libraries/cVBAProject_cls.md "library docs")  
 cVBAProcedure|ClassModule|[cVBAProcedure.cls](libraries/cVBAProcedure.cls "library source")|[cVBAProcedure_cls.md](libraries/cVBAProcedure_cls.md "library docs")  
 urlResult|StdModule|[urlResult.vba](libraries/urlResult.vba "library source")|[urlResult_vba.md](libraries/urlResult_vba.md "library docs")  
-usefulSheetStuff|StdModule|[usefulSheetStuff.vba](libraries/usefulSheetStuff.vba "library source")|[usefulSheetStuff_vba.md](libraries/usefulSheetStuff_vba.md "library docs")  
 regXLib|StdModule|[regXLib.vba](libraries/regXLib.vba "library source")|[regXLib_vba.md](libraries/regXLib_vba.md "library docs")  
 cVBAArgument|ClassModule|[cVBAArgument.cls](libraries/cVBAArgument.cls "library source")|[cVBAArgument_cls.md](libraries/cVBAArgument_cls.md "library docs")  
 cregXLib|ClassModule|[cregXLib.cls](libraries/cregXLib.cls "library source")|[cregXLib_cls.md](libraries/cregXLib_cls.md "library docs")  
