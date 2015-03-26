@@ -2,7 +2,7 @@
 ## VBA Module: **[cVbaGit](/libraries/cVbaGit.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cVbaGit
@@ -11,6 +11,7 @@ Below is a section for each procedure in cVbaGit
 VBA Procedure: **getEnums**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -23,6 +24,7 @@ Description: ****
 VBA Procedure: **throw**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -37,6 +39,7 @@ message|String|False||
 VBA Procedure: **getTokenFromBasic**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
@@ -52,6 +55,7 @@ clientHash|String|False||
 VBA Procedure: **isAccessToken**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -64,6 +68,7 @@ Description: ****
 VBA Procedure: **setAccessToken**  
 Type: **Function**  
 Returns: **[cVbaGit](/libraries/cVbaGit_cls.md "cVbaGit")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -79,6 +84,7 @@ client|String|False||
 VBA Procedure: **getMyRepos**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **standard result object**  
 Scope: **Public**  
 Description: **get all my repos**  
 
@@ -91,6 +97,7 @@ Description: **get all my repos**
 VBA Procedure: **getSpecificRepo**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -106,6 +113,7 @@ repoName|String|False||
 VBA Procedure: **getFileByPath**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **standard result object**  
 Scope: **Public**  
 Description: **get a file by path and repo**  
 
@@ -121,6 +129,7 @@ repoObject|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||a repo
 VBA Procedure: **getUnpaged**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **standard result object**  
 Scope: **Public**  
 Description: **get intercept to deal with pagination**  
 
@@ -138,6 +147,7 @@ data|[cJobject](/libraries/cJobject_cls.md "cJobject")|True| Nothing|
 VBA Procedure: **createRepo**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **standard result object**  
 Scope: **Public**  
 Description: **create a repo**  
 
@@ -153,6 +163,7 @@ optOptions|[cJobject](/libraries/cJobject_cls.md "cJobject")|True| Nothing|any a
 VBA Procedure: **contentOptions**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **options**  
 Scope: **Private**  
 Description: **special options for the api**  
 
@@ -165,6 +176,7 @@ Description: **special options for the api**
 VBA Procedure: **apiOptions**  
 Type: **Function**  
 Returns: **[cJobject](/libraries/cJobject_cls.md "cJobject")**  
+Return description: **options**  
 Scope: **Private**  
 Description: **special options for the api**  
 
@@ -179,6 +191,7 @@ optOptions|[cJobject](/libraries/cJobject_cls.md "cJobject")|True| Nothing|
 VBA Procedure: **apiBase**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: **the api base url**  
 Scope: **Private**  
 Description: **function the api base url**  
 
@@ -191,6 +204,7 @@ Description: **function the api base url**
 VBA Procedure: **commitFile**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: **standard result**  
 Scope: **Public**  
 Description: **commit a file**  
 
@@ -208,6 +222,7 @@ content|String|False||some content
 VBA Procedure: **tearDown**  
 Type: **Function**  
 Returns: **Variant**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -220,6 +235,7 @@ Description: ****
 VBA Procedure: **Class_Initialize**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
