@@ -2,7 +2,7 @@
 ## VBA Module: **[cVBAmodule](/libraries/cVBAmodule.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cVBAmodule
@@ -11,6 +11,7 @@ Below is a section for each procedure in cVBAmodule
 VBA Procedure: **name**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -23,6 +24,7 @@ Description: ****
 VBA Procedure: **parent**  
 Type: **Get**  
 Returns: **[cVBAProject](/libraries/cVBAProject_cls.md "cVBAProject")**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -35,6 +37,7 @@ Description: ****
 VBA Procedure: **vCom**  
 Type: **Get**  
 Returns: **VBComponent**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -47,6 +50,7 @@ Description: ****
 VBA Procedure: **procedures**  
 Type: **Get**  
 Returns: **Collection**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -59,6 +63,7 @@ Description: ****
 VBA Procedure: **init**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -74,6 +79,7 @@ pj|[cVBAProject](/libraries/cVBAProject_cls.md "cVBAProject")|False||
 VBA Procedure: **tearDown**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -86,6 +92,7 @@ Description: ****
 VBA Procedure: **textKind**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -98,6 +105,7 @@ Description: ****
 VBA Procedure: **Class_Initialize**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Private**  
 Description: ****  
 
