@@ -2,7 +2,7 @@
 ## VBA Module: **[cregXLib](/libraries/cregXLib.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 26/03/2015 15:48:25 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 26/03/2015 16:05:48 by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cregXLib
@@ -11,6 +11,7 @@ Below is a section for each procedure in cregXLib
 VBA Procedure: **pattern**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -23,6 +24,7 @@ Description: ****
 VBA Procedure: **pattern**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -37,6 +39,7 @@ p|String|False||
 VBA Procedure: **name**  
 Type: **Get**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -49,6 +52,7 @@ Description: ****
 VBA Procedure: **name**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -63,6 +67,7 @@ p|String|False||
 VBA Procedure: **ignorecase**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -75,6 +80,7 @@ Description: ****
 VBA Procedure: **ignorecase**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -89,6 +95,7 @@ p|Boolean|False||
 VBA Procedure: **rGlobal**  
 Type: **Get**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -101,6 +108,7 @@ Description: ****
 VBA Procedure: **rGlobal**  
 Type: **Let**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -115,6 +123,7 @@ p|Boolean|False||
 VBA Procedure: **init**  
 Type: **Sub**  
 Returns: **void**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -133,6 +142,7 @@ bGlobal|Boolean|True| True|
 VBA Procedure: **getString**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -147,6 +157,7 @@ sFrom|String|False||
 VBA Procedure: **getGroup**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -162,6 +173,7 @@ groupNumber|Long|False||
 VBA Procedure: **getReplace**  
 Type: **Function**  
 Returns: **String**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
@@ -177,6 +189,7 @@ sTo|String|False||
 VBA Procedure: **getTest**  
 Type: **Function**  
 Returns: **Boolean**  
+Return description: ****  
 Scope: **Public**  
 Description: ****  
 
