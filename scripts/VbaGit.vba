@@ -31,8 +31,10 @@ Public Sub doEverything()
 '    doExtraction "excelProgressBar", "TestProgressBar"
 
     doExtraction "VbaGit", "VbaGit"
+    doExtraction "cVBAProject", "cVBAProject"
+    doExtraction "cJobject", "cJobject"
     ' now write them to git
-    doGit
+    'doGit
     
 End Sub
 '/**
