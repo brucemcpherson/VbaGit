@@ -14,21 +14,21 @@ Public Sub doEverything()
 
 
     '    ' base classes
-    doExtraction "cJobject", "cJobject"
+   ' doExtraction "cJobject", "cJobject"
     
 '
 '    ' utilities
 '    doExtraction "excelClassSerializer", "classSerializer"
 '
 '    ' example projects
-'    doExtraction "excelRestLibraryExamples", "restLibraryExamples"
-'    doExtraction "excelRoadmapper", "doRoadmapper"
+    'doExtraction "excelRestLibraryExamples", "restLibraryExamples"
+'     doExtraction "excelRoadmapper", "doRoadmapper"
 '    doExtraction "excelGoogleSheets", "googleSheets,googleWireExample"
 '    doExtraction "excelColor", "heatmapExamples,colorizing"
 '    doExtraction "excelD3", "D3"
 '    doExtraction "excelOauth2", "oAuthExamples"
 '    doExtraction "excelParseCom", "parseCom"
-'    doExtraction "excelProgressPar", "TestProgressBar"
+'    doExtraction "excelProgressBar", "TestProgressBar"
 
     doExtraction "VbaGit", "VbaGit"
     ' now write them to git
@@ -733,7 +733,7 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
         matches As MatchCollection, e As cJobject, pos As cJobject, _
         jo As cJobject, match As match, recurse As Boolean, procs As Collection, _
         code As String, pName As String, ob As Object, alreadyThere As cJobject, _
-        warned As Boolean
+        warned As Boolean, posProc As cJobject
 
     Set c = New cStringChunker
     Set s = New cStringChunker
@@ -753,7 +753,7 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
         Set procs = job.getObject("module").procedures
         For Each proc In procs
             ' this is the position this code starts at - we'll need it later for finding where it came from
-
+            
             With pos.add
                 ' clean up the code getting rid of dims and continuations as well as th declaration
                 code = getRidOfDims( _
@@ -814,7 +814,14 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
                 ' add to the dependency list
                 For Each match In matches
                     pName = CStr(match.SubMatches(0))
+                    Debug.Assert pName <> "respectFilter"
+
+                    ' find who referenced it by the position at which it appeared
+                    Set posProc = getPosProc(pos, match)
+                    
+                    ' ob refers to the thing being called
                     Set ob = e.getObject(pName)
+                    
                     ' if its a class then we dont deal in individual procs
                     If (isModuleObj(ob)) Then
                         Set matchMod = ob
@@ -823,7 +830,7 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
                         ' but if this is a local argument to this function,
                         ' we dont need to look for references
                         ' so treat it like it was never a match
-                        If (isinCollection(ob.arguments, LCase(pName))) Then
+                        If (posProc.getObject("proc").isAnArgument(pName)) Then
                             Set matchMod = Nothing
                         End If
                     End If
@@ -849,22 +856,18 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
                             Set d = alreadyThere.parent
                         End If
                     
-                        ' find who referenced it by the position at which it appeared
-                        For Each jo In pos.children
-                            If match.FirstIndex >= jo.cValue("start") And match.FirstIndex _
-                                + match.Length <= jo.cValue("start") + jo.cValue("length") Then
-                                If (alreadyThere Is Nothing Or _
-                                    d.child("cross").findInArray("name", jo.getObject("proc").name) Is Nothing) Then
-                                ' first time we're seeing a reference to it so add to cross reference
-                                    With d.child("cross").add
-                                        .add "proc", ob
-                                        .add "by", jo.getObject("proc")
-                                        .add "name", jo.getObject("proc").name
-                                    End With
-                                End If
-                                Exit For
-                            End If
-                        Next jo
+                        ' record the cross reference event
+                        If (alreadyThere Is Nothing Or _
+                            d.child("cross").findInArray("name", _
+                                    posProc.getObject("proc").name) Is Nothing) Then
+                        ' first time we're seeing a reference to it so add to cross reference
+                            With d.child("cross").add
+                                .add "proc", ob
+                                .add "by", posProc.getObject("proc")
+                                .add "name", posProc.getObject("proc").name
+                            End With
+                        End If
+
                     
                     End If
                 Next match
@@ -881,7 +884,26 @@ Private Function dependencyResolve(modules As cJobject, dependencyList As cJobje
     
     Set dependencyResolve = dependencyList
 End Function
-
+'/**
+' * get the pos object the the procedure that provoked ths dependency
+' * @param {} pos the position object for all the code of this module
+' * @param {} matchOb the regex match that found this dependency
+' * @return the pos object branch with the match
+' */
+Private Function getPosProc(pos As cJobject, matchOb As match) As cJobject
+    Dim jo As cJobject
+    For Each jo In pos.children
+        If (matchOb.FirstIndex >= jo.cValue("start") And _
+              matchOb.FirstIndex + matchOb.Length <= _
+              jo.cValue("start") + jo.cValue("length")) Then
+            ' this is who is referencing me
+            Set getPosProc = jo
+            Exit Function
+        End If
+    Next jo
+    MsgBox ("failed to find who provoked this dependency " & matchOb)
+    
+End Function
 Private Function makeCrossReferenceJob(dependencyList As cJobject) As cJobject
     Dim cross As cJobject, settings As cJobject, job As cJobject, jo As cJobject
     Set cross = New cJobject
