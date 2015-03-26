@@ -1,12 +1,13 @@
 Option Explicit
 ' one of these for each procedure/property in the VBE-IDE
-' v2.03
+' v2.4.1
 Private pParent As cVBAmodule
 Private pName As String
 Private pProcKind As vbext_prockind
 Private pArguments As Collection
 Private pIndex As Long
 Private pDescription As String
+Private pReturnDoc  As String
 Private Sub Class_Initialize()
     Set pArguments = New Collection
 End Sub
@@ -15,6 +16,9 @@ Public Property Let description(p As String)
 End Property
 Public Property Get description() As String
     description = pDescription
+End Property
+Public Property Get returnDoc() As String
+    returnDoc = pReturnDoc
 End Property
 Public Property Get name() As String
     name = pName
@@ -51,6 +55,7 @@ Public Function init(m As cVBAmodule, pn As String, pk As vbext_prockind) As cVB
     pIndex = pParent.procedures.Count
     pDescription = superTrim(getDescription)
     dealWithArguments declaration
+    pReturnDoc = getReturnDoc
     Set init = Me
 End Function
 Public Sub tearDown()
@@ -85,13 +90,26 @@ Public Function getDescription() As String
         getDescription = superTrim(matches(0).SubMatches(0))
     End If
 End Function
+Private Function getReturnDoc() As String
+    Dim rx As String, s As String, a As Variant, i As Long, _
+        p As cVBAArgument, j As Long, k As Long
+    
+    Dim matches As MatchCollection, m As match
+    ' get any jdocs description of the arguments
+    Set matches = getRx("@return\s+(?:{\w*})\s*(.*)$").Execute(getTheCodePlusLeadingComments)
+    getReturnDoc = ""
+    If matches.Count > 0 Then
+        getReturnDoc = superTrim(matches(0).SubMatches(0))
+    End If
+
+End Function
 Private Function dealWithArguments(dec As String) As cVBAProcedure
     Dim rx As String, s As String, a As Variant, i As Long, _
         p As cVBAArgument, j As Long, k As Long
     
     Dim matches As MatchCollection, m As match
     ' get any jdocs description of the arguments
-    Set matches = getRx("@param (?:{\w*})\s*(\w*)\s*(.*)$").Execute(getTheCodePlusLeadingComments)
+    Set matches = getRx("@param\s+(?:{\w*})\s*(\w*)\s*(.*)$").Execute(getTheCodePlusLeadingComments)
     
     rx = "\((.*)\)"
     s = Trim(rxString(rx, dec))
