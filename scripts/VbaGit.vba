@@ -1509,7 +1509,7 @@ End Function
 
 Private Function getGitBasicCredentials()
     getGitBasicCredentials = getFromVbaGitRegistry( _
-        getVGSettings().toString("REGISTRY.basic")) & "x"
+        getVGSettings().toString("REGISTRY.basic"))
 End Function
 Private Sub setGitBasicCredentials(user As String, pass As String)
     setVbaGitRegistry getVGSettings() _
@@ -1517,7 +1517,8 @@ Private Sub setGitBasicCredentials(user As String, pass As String)
 End Sub
 Private Sub setGitClientCredentials(clientId As String, clientSecret As String)
     setVbaGitRegistry getVGSettings() _
-        .toString("REGISTRY.client"), Base64Encode(clientId & ":" & clientSecret)
+        .toString("REGISTRY.client"), _
+        Base64Encode(clientId & ":" & clientSecret)
 End Sub
 Private Function getGitClientCredentials()
     getGitClientCredentials = getFromVbaGitRegistry( _
