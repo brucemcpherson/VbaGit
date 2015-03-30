@@ -1,6 +1,6 @@
 'gistThat@mcpher.com :do not modify this line - see ramblings.mcpher.com for details: updated on 8/18/2014 4:48:00 PM : from manifest:7471153 gist https://gist.github.com/brucemcpherson/3414346/raw
 Option Explicit
-' v2.22  3414346
+' v2.23  3414346
 
 ' Acknowledgement for the microtimer procedures used here to
 ' thanks to Charles Wheeler - http://www.decisionmodels.com/
