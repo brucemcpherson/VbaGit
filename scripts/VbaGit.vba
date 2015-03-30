@@ -1,7 +1,7 @@
 Option Explicit
 ' this is based on the ideas from http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready
 ' and is about getting your excel code to github
-' VbaGit v0.2.2
+' VbaGit v0.2.3
 
 ' settings are in public var
 Dim VGSettings As cJobject
@@ -143,7 +143,7 @@ Public Function getVGSettings(Optional force As Boolean)
                 .add "client", "clienthash"
             End With
             With .add("APP")
-                .add "VERSION", "0.0.1"
+                .add "VERSION", "0.2.3"
             End With
             With .add("FILES")
                 .add "README", "README.md"
@@ -1508,14 +1508,18 @@ Public Function setVbaGitRegistry(key, value) As String
 End Function
 
 Private Function getGitBasicCredentials()
-    getGitBasicCredentials = getFromVbaGitRegistry(getVGSettings().toString("REGISTRY.basic"))
+    getGitBasicCredentials = getFromVbaGitRegistry( _
+        getVGSettings().toString("REGISTRY.basic")) & "x"
 End Function
 Private Sub setGitBasicCredentials(user As String, pass As String)
-    setVbaGitRegistry getVGSettings().toString("REGISTRY.basic"), Base64Encode(user & ":" & pass)
+    setVbaGitRegistry getVGSettings() _
+        .toString("REGISTRY.basic"), Base64Encode(user & ":" & pass)
 End Sub
 Private Sub setGitClientCredentials(clientId As String, clientSecret As String)
-    setVbaGitRegistry getVGSettings().toString("REGISTRY.client"), Base64Encode(clientId & ":" & clientSecret)
+    setVbaGitRegistry getVGSettings() _
+        .toString("REGISTRY.client"), Base64Encode(clientId & ":" & clientSecret)
 End Sub
 Private Function getGitClientCredentials()
-    getGitClientCredentials = getFromVbaGitRegistry(getVGSettings().toString("REGISTRY.client"))
+    getGitClientCredentials = getFromVbaGitRegistry( _
+        getVGSettings().toString("REGISTRY.client"))
 End Function
