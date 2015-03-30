@@ -1,5 +1,5 @@
 # VBA Project: VbaGit
-This repo (VbaGit) was automatically created on 26/03/2015 16:06:23 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
+This repo (VbaGit) was automatically created on 30/03/2015 10:08:23 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
 ## Details for VBA project VbaGit
 Where possibile directly referenced or sub referenced library sources have been copied to this repository  
 ### Modules of VbaGit included in this repo
@@ -14,8 +14,8 @@ usefulStuff|StdModule|[usefulStuff.vba](libraries/usefulStuff.vba "library sourc
 cJobject|ClassModule|[cJobject.cls](libraries/cJobject.cls "library source")|[cJobject_cls.md](libraries/cJobject_cls.md "library docs")  
 cVbaGit|ClassModule|[cVbaGit.cls](libraries/cVbaGit.cls "library source")|[cVbaGit_cls.md](libraries/cVbaGit_cls.md "library docs")  
 usefulcJobject|StdModule|[usefulcJobject.vba](libraries/usefulcJobject.vba "library source")|[usefulcJobject_vba.md](libraries/usefulcJobject_vba.md "library docs")  
-cStringChunker|ClassModule|[cStringChunker.cls](libraries/cStringChunker.cls "library source")|[cStringChunker_cls.md](libraries/cStringChunker_cls.md "library docs")  
 usefulRegex|StdModule|[usefulRegex.vba](libraries/usefulRegex.vba "library source")|[usefulRegex_vba.md](libraries/usefulRegex_vba.md "library docs")  
+cStringChunker|ClassModule|[cStringChunker.cls](libraries/cStringChunker.cls "library source")|[cStringChunker_cls.md](libraries/cStringChunker_cls.md "library docs")  
 cVBAmodule|ClassModule|[cVBAmodule.cls](libraries/cVBAmodule.cls "library source")|[cVBAmodule_cls.md](libraries/cVBAmodule_cls.md "library docs")  
 cVBAProject|ClassModule|[cVBAProject.cls](libraries/cVBAProject.cls "library source")|[cVBAProject_cls.md](libraries/cVBAProject_cls.md "library docs")  
 cVBAProcedure|ClassModule|[cVBAProcedure.cls](libraries/cVBAProcedure.cls "library source")|[cVBAProcedure_cls.md](libraries/cVBAProcedure_cls.md "library docs")  
