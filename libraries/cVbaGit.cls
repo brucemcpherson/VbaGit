@@ -106,7 +106,8 @@ End Function
 '   * @return {object} standard result object
 '   */
 Public Function getUnpaged(url As String, accessToken As String, _
-                options As cJobject, Optional data As cJobject = Nothing) As cJobject
+                options As cJobject, _
+                Optional data As cJobject = Nothing) As cJobject
     
     Dim result As cJobject, h As String, rx As RegExp, _
         matches As MatchCollection, e As cJobject, newUrl As String
