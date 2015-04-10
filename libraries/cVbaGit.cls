@@ -124,7 +124,7 @@ Public Function getUnpaged(url As String, accessToken As String, _
         data.add , result.getObject("data")
         
         ' github api returns paged results with the next link in the headers
-        If (isSomething(result.childExists("headers.Link"))) Then
+        If (isSomething(result.child("headers.Link"))) Then
         
             h = result.toString("headers.Link")
             If (h <> vbNullString) Then
