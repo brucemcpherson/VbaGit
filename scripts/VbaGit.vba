@@ -143,7 +143,7 @@ Public Function getVGSettings(Optional force As Boolean)
                 .add "client", "clienthash"
             End With
             With .add("APP")
-                .add "VERSION", "0.2.3"
+                .add "VERSION", "0.2.4"
             End With
             With .add("FILES")
                 .add "README", "README.md"
