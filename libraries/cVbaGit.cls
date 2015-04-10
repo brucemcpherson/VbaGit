@@ -110,7 +110,7 @@ Public Function getUnpaged(url As String, accessToken As String, _
                 Optional data As cJobject = Nothing) As cJobject
     
     Dim result As cJobject, h As String, rx As RegExp, _
-        matches As MatchCollection, e As cJobject, newUrl As String
+        matches As MatchCollection, e As cJobject, newUrl As String, jLink As cJobject
     ' first time in data will be empty
     If data Is Nothing Then
         Set data = New cJobject
@@ -123,16 +123,20 @@ Public Function getUnpaged(url As String, accessToken As String, _
     If (result.cValue("success")) Then
         data.add , result.getObject("data")
         
-        h = result.toString("headers.Link")
-        If (h <> vbNullString) Then
-            Set rx = New RegExp
-            rx.pattern = "<([^>]*)>;\s?rel=""next"""
-            
-            Set matches = rx.Execute(h)
-            If (matches.Count > 0) Then
-                ' go round again
-                newUrl = CStr(matches.Item(0).SubMatches(0))
-                getUnpaged newUrl, accessToken, options, data
+        ' github api returns paged results with the next link in the headers
+        If (isSomething(result.childExists("headers.Link"))) Then
+        
+            h = result.toString("headers.Link")
+            If (h <> vbNullString) Then
+                Set rx = New RegExp
+                rx.pattern = "<([^>]*)>;\s?rel=""next"""
+                
+                Set matches = rx.Execute(h)
+                If (matches.Count > 0) Then
+                    ' go round again
+                    newUrl = CStr(matches.Item(0).SubMatches(0))
+                    getUnpaged newUrl, accessToken, options, data
+                End If
             End If
         End If
     End If
