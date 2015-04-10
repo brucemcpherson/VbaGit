@@ -470,7 +470,11 @@ Private Function createRepos(git As cVbaGit, infos As cJobject) As cJobject
     For Each info In infos.children
         ' we'll only do uncommitted or modified since last commit
         If (info.cValue("committedDate") < info.cValue("modifieddate")) Then
-            Set repo = repos.findInArray("name", info.toString("repo"))
+            If (isSomething(repos)) Then
+                Set repo = repos.findInArray("name", info.toString("repo"))
+            Else
+                Set repo = Nothing
+            End If
             ' need to create it
             If (repo Is Nothing) Then
                 Set result = git.createRepo(info.toString("repo"))
