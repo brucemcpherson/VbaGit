@@ -1,5 +1,5 @@
 # VBA Project: VbaGit
-This repo (VbaGit) was automatically created on 4/18/2017 10:39:21 AM by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
+This repo (VbaGit) was automatically created on 4/18/2017 10:42:59 AM by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
 ## Details for VBA project VbaGit
 Where possibile directly referenced or sub referenced library sources have been copied to this repository  
 ### Modules of VbaGit included in this repo
