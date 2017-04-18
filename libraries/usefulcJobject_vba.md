@@ -2,7 +2,7 @@
 ## VBA Module: **[usefulcJobject](/libraries/usefulcJobject.vba "source is here")**
 ### Type: StdModule  
 
-This procedure list for repo (VbaGit) was automatically created on 10/04/2015 13:32:49 by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 4/18/2017 10:39:20 AM by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in usefulcJobject
@@ -256,3 +256,33 @@ Description: ****
 node|IXMLDOMNode|False||
 job|[cJobject](/libraries/cJobject_cls.md "cJobject")|False||
 arrayHead|Boolean|True| False|
+
+
+---
+VBA Procedure: **hackJSObjectToJSON**  
+Type: **Function**  
+Returns: **String**  
+Return description: **the hacked string**  
+Scope: **Public**  
+Description: **this will deal with the problem of code copied from javascript, where JSON has no quotes round property names, with a callback**  
+
+*Public Function hackJSObjectToJSON(theString As String) As String*  
+
+*name*|*type*|*optional*|*default*|*description*
+---|---|---|---|---
+theString|String|False||the string to be hacked
+
+
+---
+VBA Procedure: **hackJSONPObjectToJSON**  
+Type: **Function**  
+Returns: **String**  
+Return description: **the hacked string**  
+Scope: **Public**  
+Description: ****  
+
+*Public Function hackJSONPObjectToJSON(theString As String) As String*  
+
+*name*|*type*|*optional*|*default*|*description*
+---|---|---|---|---
+theString|String|False||the string to be hacked
