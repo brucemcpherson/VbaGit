@@ -1,5 +1,5 @@
 # VBA Project: VbaGit
-This repo (VbaGit) was automatically created on 10/04/2015 13:32:49 by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
+This repo (VbaGit) was automatically created on 4/18/2017 10:39:21 AM by VBAGit.For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")  
 ## Details for VBA project VbaGit
 Where possibile directly referenced or sub referenced library sources have been copied to this repository  
 ### Modules of VbaGit included in this repo
@@ -28,9 +28,9 @@ cregXLib|ClassModule|[cregXLib.cls](libraries/cregXLib.cls "library source")|[cr
 ####These references were detected in the workbook (VbaGitBootStrap.xlsm) this repo was created from. You may not need them all  
 *name*|*guid*|*major*|*minor*|*description*  
 ---|---|---|---|---  
-VBA|{000204EF-0000-0000-C000-000000000046}|4|0|Visual Basic For Applications  
-Excel|{00020813-0000-0000-C000-000000000046}|1|6|Microsoft Excel 12.0 Object Library  
-Office|{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}|2|4|Microsoft Office 12.0 Object Library  
+VBA|{000204EF-0000-0000-C000-000000000046}|4|2|Visual Basic For Applications  
+Excel|{00020813-0000-0000-C000-000000000046}|1|9|Microsoft Excel 16.0 Object Library  
+Office|{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}|2|8|Microsoft Office 16.0 Object Library  
 MSXML2|{F5078F18-C551-11D3-89B9-0000F81FE221}|6|0|Microsoft XML, v6.0  
 VBIDE|{0002E157-0000-0000-C000-000000000046}|5|3|Microsoft Visual Basic for Applications Extensibility 5.3  
 VBScript_RegExp_55|{3F4DACA7-160D-11D2-A8E9-00104B365C9F}|5|5|Microsoft VBScript Regular Expressions 5.5  
