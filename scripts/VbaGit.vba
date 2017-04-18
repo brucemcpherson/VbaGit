@@ -9,13 +9,15 @@ Dim VGSettings As cJobject
 ' * example of exporting/importing a repos from github
 ' */
 Public Sub doEverything()
-
+    doExtraction "VbaGit", "VbaGit"
+    doGit "VbaGit"
     ' these are the projects in this workbook i want to separate
+   'doExtraction "cJobject", "cJobject"
+   'doGit "cJobject"
 
-
-    '    ' base classes
-   ' doExtraction "cJobject", "cJobject"
-    
+   'doExtraction "vanillacJobject", "advancedcJobject"
+    'doExtraction "emptycDataSet", "googleSheets,googleWireExample,oauthexamples,restLibrary"
+    'doGit "emptycDataSet"
 '
 '    ' utilities
 '    doExtraction "excelClassSerializer", "classSerializer"
@@ -30,12 +32,14 @@ Public Sub doEverything()
 '    doExtraction "excelParseCom", "parseCom"
 '    doExtraction "excelProgressBar", "TestProgressBar"
 
-    doExtraction "VbaGit", "VbaGit"
+ '   doExtraction "cChromeTraceVBA", "cChromeTraceVBA,testChromeTrace"
     'doExtraction "cVBAProject", "cVBAProject,cVBAProcedure,cVBAmodule,cVBAArgument"
     'doExtraction "cDataSet", "cDataSet"
     'doExtraction "excelRestLibrary", "restLibrary,cRest"
     ' now write them to git
-    doGit "VbaGit"
+    'doGit "emptycDataSet"
+    'doExtraction "effex-demo-markers-excel", "effexTests,VBAMapsEffex"
+    'doGit "effex-demo-markers-excel"
     
 End Sub
 '/**
@@ -43,8 +47,9 @@ End Sub
 ' */
 Public Sub doTheImport()
     ' this is the something I want to import into the companion workbook
-    'doImportFromGit "cJobject"
-
+    '//doImportFromGit "cDataSet"
+    ''doImportFromGit "cJobject"
+    
 End Sub
 
 ' NOTES ON IMPORTING CODE FROM GITHUB
@@ -107,8 +112,8 @@ End Sub
 ' */
 Private Function deleteThisAfterRunningOnce()
     ' substitute your git application clientid/secret
-    setGitBasicCredentials "git user name", "git password"
-    setGitClientCredentials "short git creds", "longer git creds"
+    setGitBasicCredentials "username git", "passwrod git"
+    setGitClientCredentials "short", "long"
 End Function
 '/**
 ' * sets up the settings object if its not already set up and returns it
@@ -125,7 +130,7 @@ Public Function getVGSettings(Optional force As Boolean)
         Set VGSettings = New cJobject
         With VGSettings.init(Nothing)
             With .add("EXTRACT")
-                .add "TO", "c:/users/fhk647/documents/gas/Extraction/Scripts/"
+                .add "TO", "c:/users/bruce/documents/gas/Extraction/Scripts/"
             End With
             With .add("GIT")
                 With .add("COMMITTER")
