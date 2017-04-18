@@ -1,5 +1,5 @@
 'gistThat@mcpher.com :do not modify this line - see ramblings.mcpher.com for details: updated on 8/18/2014 4:47:46 PM : from manifest:3414394 gist https://gist.github.com/brucemcpherson/3414365/raw/usefulcJobject.vba
-'v2.15 23.3.15
+'v2.16 11.5.15
 Option Explicit
 
 Public Function fromISODateTime(iso As String) As Date
@@ -323,5 +323,24 @@ Private Function handleNode(node As IXMLDOMNode, job As cJobject, Optional array
     End Select
     
 End Function
+'/**
+'* this will deal with the problem of code copied from javascript, where JSON has no quotes round property names
+'* @param {string} theString the string to be hacked
+'* @return {string} the hacked string
+'*/
+Public Function hackJSObjectToJSON(theString As String) As String
+    hackJSObjectToJSON = _
+        rxReplace("({|,)(?:\s*)(?:')?([A-Za-z_$\.][A-Za-z0-9_ \-\.$]*)(?:')?(?:\s*):", theString, "$1""$2"":")
 
+End Function
 
+'/**
+'* this will deal with the problem of code copied from javascript, where JSON has no quotes round property names, with a callback
+'* @param {string} theString the string to be hacked
+'* @return {string} the hacked string
+'*/
+Public Function hackJSONPObjectToJSON(theString As String) As String
+    hackJSONPObjectToJSON = _
+        hackJSObjectToJSON(rxReplace("\w+\s*\()(.*)\);*", theString, "$2"))
+
+End Function
