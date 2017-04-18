@@ -1,7 +1,7 @@
 'gistThat@mcpher.com :do not modify this line - see ramblings.mcpher.com for details: updated on 8/18/2014 4:47:45 PM : from manifest:3414394 gist https://gist.github.com/brucemcpherson/3414365/raw
 ' this is used for object serliazation. Its just basic JSON with only string data types catered for
 Option Explicit
-' v2.22 3414365
+' v2.25 3414365
 'for more about this
 ' http://ramblings.mcpher.com/Home/excelquirks/classeslink/data-manipulation-classes
 'to contact me
@@ -534,20 +534,48 @@ Public Function recurseSerialize(job As cJobject, Optional soFar As cStringChunk
   
   If Not (job.hasChildren Or job.isArrayRoot) Then
     If blf And Not job.hasKey Then s = s & Space(indent)
+    
+    Dim vt As VbVarType
+    vt = VarType(job.value)
+    
+    ' an embedded object
     If (job.isObjValue()) Then
         t.add quote(job.toString)
-    ElseIf (VarType(job.value) <> vbLong And _
-        VarType(job.value) <> vbBoolean And _
-        VarType(job.value) <> vbInteger And _
-        VarType(job.value) <> vbDouble And Not job.isVoid()) _
-        Then
-        t.add quote(CStr(escapeify(job.value)))
-    Else
-        If Not job.isVoid() Then
-            t.add LCase(job.toString)
+        
+    ' translate to null
+    ElseIf job.isVoid() Then
+        t.add "null"
+    
+    ' take care to avoid localized version of true/false
+    ElseIf vt = vbBoolean Then
+
+        If (job.value) Then
+            t.add ("true")
         Else
-            t.add "null"
+            t.add ("true")
         End If
+    
+    ' take care to avoid localized version of decimal points
+    ElseIf (vt = vbDouble Or _
+        vt = vbSingle Or _
+        vt = vbCurrency) Then
+        
+        t.add Replace(LCase(job.toString), ",", ".")
+    
+    ' numbers shouldnt be quoted
+    ElseIf (vt = vbLong Or _
+            vt = vbInteger Or _
+            vt = vbByte) Then
+            
+        t.add (job.toString)
+   
+    ' turn dates to ISO
+    ElseIf (vt = vbDate) Then
+        t.add (toISODateTime(job.value))
+        
+    ' quote and escapeify everything else
+    Else
+        t.add quote(CStr(escapeify(job.value)))
     End If
         
   Else
@@ -619,6 +647,33 @@ Public Function mergeArrayOfJobs() As cJobject
     Next job
     
     Set mergeArrayOfJobs = head
+End Function
+Public Function extractAndBlowArrayOfJobs() As cJobject
+    Dim job As cJobject, newArray As cJobject, jo As cJobject, head As cJobject, joc As cJobject
+    
+    ' Me should be an array of Jobjects, which are themsleves objects
+    ' will blow out the objects ffor stringifiyinh
+    Debug.Assert isArrayRoot
+    
+    Set newArray = New cJobject
+    With newArray.init(Nothing).addArray
+        '// select out any objects and add them
+        For Each job In children
+            Set head = .add
+            For Each jo In job.children
+                If (jo.isObjValue) Then
+                    For Each joc In jo.getObject.children
+                        Set joc.parent = head
+                        joc.childIndex = head.children.Count
+                        head.children.add joc, joc.key
+                    Next joc
+                End If
+            Next jo
+        Next job
+    End With
+
+    
+    Set extractAndBlowArrayOfJobs = newArray
 End Function
 Public Function replaceBranch(byThis As cJobject) As cJobject
     
@@ -1250,18 +1305,28 @@ End Function
 Public Function needSwap(cc As cJobject, e As eSort) As Boolean
     ' this can be used from a sorting alogirthm
     
+    Dim a As Variant, b As Variant
+
     Select Case e
         Case eSortAscending
-            needSwap = LCase(cValue(pbyKey)) > LCase(cc.cValue(pbyKey))
+            needSwap = sortNorm(cValue(pbyKey)) > sortNorm(cc.cValue(pbyKey))
             
         Case eSortDescending
-            needSwap = LCase(cValue(pbyKey)) < LCase(cc.cValue(pbyKey))
+            needSwap = sortNorm(cValue(pbyKey)) < sortNorm(cc.cValue(pbyKey))
     
         Case Else
             needSwap = False
     End Select
 End Function
+Private Function sortNorm(v As Variant) As Variant
 
+    If (VarType(v) = vbString) Then
+        sortNorm = LCase(v)
+    Else
+        sortNorm = v
+    End If
+    
+End Function
 Private Sub Class_Initialize()
     pisArrayRoot = False
     pValid = True
@@ -1279,6 +1344,10 @@ Public Sub tearDown()
     Set pBacktrack = Nothing
     Set pChildren = Nothing
 End Sub
+
+
+
+
 
 
 
