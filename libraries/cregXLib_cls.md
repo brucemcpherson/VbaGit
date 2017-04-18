@@ -2,7 +2,7 @@
 ## VBA Module: **[cregXLib](/libraries/cregXLib.cls "source is here")**
 ### Type: ClassModule  
 
-This procedure list for repo (VbaGit) was automatically created on 4/18/2017 10:39:21 AM by VBAGit.
+This procedure list for repo (VbaGit) was automatically created on 4/18/2017 10:42:59 AM by VBAGit.
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation")
 
 Below is a section for each procedure in cregXLib
