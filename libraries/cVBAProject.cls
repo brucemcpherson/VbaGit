@@ -10,6 +10,7 @@ End Property
 Public Property Get name() As String
     name = theProject().name
 End Property
+
 Public Property Get wBook() As Workbook
     Set wBook = pWorkBook
 End Property
